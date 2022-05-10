@@ -1,0 +1,327 @@
+{
+  "Uuid": "424cf7c9-5053-48d8-9516-4d854582e9a4",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "eliminarEtiquetas_script",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "875ebdaeeee34cfd9f73245120fa89ed",
+      "Inputs": [
+        {
+          "Id": "87703f98d3cc40f690b14f253ae37ef8",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "087efa3b18e944e88b7c608fc55b665e",
+          "Name": "View",
+          "Description": "The View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "28f114a684724b5abc044ae5cee00455",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category in the specified view from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "d1dc340f23d44d65a49903fecb6989cc",
+      "Inputs": [
+        {
+          "Id": "b5ed1e7196534683aeae12c2af66bd48",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "df740c4e0ab34879a470d8f59c8bf908",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n\"Structural Framing Tags\",\n\"Wall Tags\",\n\"Structural Foundation Tags\",\n\"Structural Column Tags\",\n\"Floor Tags\"\n];",
+      "Id": "bb0c14fdf899433e8267ef77c7a5a940",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d523079a5bbb4983acd5ff6127b53dca",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "fb746109aaae4bbd93b5f8bc692b9c6c",
+      "Inputs": [
+        {
+          "Id": "3a16b310a9374e74a7c1a6f5cf8fbbe1",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b633781b9d0341178a845762abb8dd28",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "1eaa128db3ef4376b5319d1cc3c7cde4",
+      "Inputs": [
+        {
+          "Id": "0c09f72acd6443788e3ab4da7a3563ae",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02975e8384cb48a485a0e0a331b71d74",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e0f2344b03ec4a899126e1c7b13fdd56",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Delete@Revit.Elements.Element",
+      "Id": "7146fb39f488424f96c9555479c5eb46",
+      "Inputs": [
+        {
+          "Id": "4bdef2decf2746e78063865089d48288",
+          "Name": "element",
+          "Description": "The element to delete.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f1347bc84f4c428f939d8782adbe11aa",
+          "Name": "int[]",
+          "Description": "The list of element id's deleted, including any dependent elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete the element and any elements that are totally dependent upon the element.\n\nElement.Delete (element: Element): int[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "28f114a684724b5abc044ae5cee00455",
+      "End": "0c09f72acd6443788e3ab4da7a3563ae",
+      "Id": "c640330df2c24367a767f1f23a942602"
+    },
+    {
+      "Start": "df740c4e0ab34879a470d8f59c8bf908",
+      "End": "87703f98d3cc40f690b14f253ae37ef8",
+      "Id": "d8cbc0170d8b4d199c73af7575aa2ec9"
+    },
+    {
+      "Start": "d523079a5bbb4983acd5ff6127b53dca",
+      "End": "b5ed1e7196534683aeae12c2af66bd48",
+      "Id": "22408ed385f84553ad540215b506d939"
+    },
+    {
+      "Start": "b633781b9d0341178a845762abb8dd28",
+      "End": "087efa3b18e944e88b7c608fc55b665e",
+      "Id": "c311e33a94bc4a9b853220f9deeeb211"
+    },
+    {
+      "Start": "e0f2344b03ec4a899126e1c7b13fdd56",
+      "End": "4bdef2decf2746e78063865089d48288",
+      "Id": "8e315061ce0e4e38942c399641bf2faa"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "200.4.0.7938",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "fb746109aaae4bbd93b5f8bc692b9c6c"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.1.11775",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category in View",
+        "Id": "875ebdaeeee34cfd9f73245120fa89ed",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 862.0,
+        "Y": 539.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "d1dc340f23d44d65a49903fecb6989cc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 633.0,
+        "Y": 539.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "bb0c14fdf899433e8267ef77c7a5a940",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 351.0,
+        "Y": 539.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "fb746109aaae4bbd93b5f8bc692b9c6c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 632.0,
+        "Y": 624.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Flatten",
+        "Id": "1eaa128db3ef4376b5319d1cc3c7cde4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1101.21339357437,
+        "Y": 539.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Delete",
+        "Id": "7146fb39f488424f96c9555479c5eb46",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1317.22367083678,
+        "Y": 539.0
+      }
+    ],
+    "Annotations": [],
+    "X": -287.03905609687968,
+    "Y": -346.39830180507965,
+    "Zoom": 1.2777169841077238
+  }
+}
