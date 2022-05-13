@@ -1,0 +1,395 @@
+{
+  "Uuid": "748723d6-f317-43d0-ad20-ffa7828c080f",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "niveles2D_script",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "62b1cd54-26c4-4d97-9820-3fe6596282b7",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "50c9e1cb94d7474a8acb52e3b6652a6b",
+      "Inputs": [
+        {
+          "Id": "f8d6b1a363fc416ab6d9e2343c6b3047",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12cd28c50e1643ee845e40cfb993936d",
+          "Name": "view",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "645943eebf9a41a2a00d1b5eb75b4a29",
+          "Name": "DatumExtentType",
+          "Description": "Model or ViewSpecific\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e1460b455c51417982c638f6b62c7770",
+          "Name": "View",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Switch the extents of grid and level from 2d to 3d or vice versa.\r\nFor use with \"Enumerate Datum Extent Type\" node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "6bbe7f35fe354d548e307f7e8e302aa8",
+      "Inputs": [
+        {
+          "Id": "13c695f786054edfa10cebf1c2f4fd13",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8adf9f13d1aa4065acf61f89cc79d47e",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "7963f79e66aa4b6bb81e77e9ec22f4a6",
+      "Inputs": [
+        {
+          "Id": "c55ddbd177dd4daa803d72afbc666841",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f0c8f06483a24e30b5e380c38e1ff5ce",
+          "Name": "View",
+          "Description": "The View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f40e682dcbf748b2970671216703f96d",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category in the specified view from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "546396168bea457aadea6eb31b2f21c6",
+      "Inputs": [
+        {
+          "Id": "e774bc0e9a974f219045e8c1e8662504",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bfbcf9088fb9432c9f76db56bed54b2e",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "dcfed2c2-38a1-4831-8a9b-cb84138669c9",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "d8f7bf095b2548938f9a872b47b8a778",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "74034bb067e343e6b2d57ee0ae975012",
+          "Name": "3D extent",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11770ed4288d45419559c7404211d4e1",
+          "Name": "2D extent",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Enumerate Datum Extent Type : Model (3D extent) or ViewSpecific (2D extent).\r\nFor use with \"Switch between 2D or 3D extent\" node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "39ef70ae85d14fd4a110d3950ada6b7a",
+      "Inputs": [
+        {
+          "Id": "2401da8020034630aa638fd361c1dd3c",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2de8457063244a4fa85c3748e294f1f5",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Grids\";",
+      "Id": "0fce4fe635844feb961169639e5a79d8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d847bbb569f24290a95495c1ff9670ba",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "8adf9f13d1aa4065acf61f89cc79d47e",
+      "End": "f0c8f06483a24e30b5e380c38e1ff5ce",
+      "Id": "ea4afba0fd1648c18eca42f38febae4a"
+    },
+    {
+      "Start": "f40e682dcbf748b2970671216703f96d",
+      "End": "f8d6b1a363fc416ab6d9e2343c6b3047",
+      "Id": "86856a64107d4bd8b4efb56c82ac3ae8"
+    },
+    {
+      "Start": "bfbcf9088fb9432c9f76db56bed54b2e",
+      "End": "12cd28c50e1643ee845e40cfb993936d",
+      "Id": "25640ad4acfd4efa9376fa2991f321a3"
+    },
+    {
+      "Start": "11770ed4288d45419559c7404211d4e1",
+      "End": "645943eebf9a41a2a00d1b5eb75b4a29",
+      "Id": "97c1dc933cbe4cd4ad664be4c9b09fbc"
+    },
+    {
+      "Start": "2de8457063244a4fa85c3748e294f1f5",
+      "End": "c55ddbd177dd4daa803d72afbc666841",
+      "Id": "99cde60a44cb4fb5b6d10042530a0915"
+    },
+    {
+      "Start": "d847bbb569f24290a95495c1ff9670ba",
+      "End": "2401da8020034630aa638fd361c1dd3c",
+      "Id": "5df3140f703847e5beed71774f53fbfe"
+    }
+  ],
+  "Dependencies": [
+    "62b1cd54-26c4-4d97-9820-3fe6596282b7",
+    "dcfed2c2-38a1-4831-8a9b-cb84138669c9"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Genius Loci",
+      "Version": "2021.11.10",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "50c9e1cb94d7474a8acb52e3b6652a6b",
+        "d8f7bf095b2548938f9a872b47b8a778"
+      ]
+    },
+    {
+      "Name": "Orchid",
+      "Version": "200.4.0.7938",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "6bbe7f35fe354d548e307f7e8e302aa8",
+        "546396168bea457aadea6eb31b2f21c6"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.1.11775",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "50c9e1cb94d7474a8acb52e3b6652a6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Switch between 2D or 3D extent",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 799.99608283284681,
+        "Y": 536.74688455502928
+      },
+      {
+        "Id": "6bbe7f35fe354d548e307f7e8e302aa8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Document.ActiveView",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 526.65323942006182,
+        "Y": 643.63073281281709
+      },
+      {
+        "Id": "7963f79e66aa4b6bb81e77e9ec22f4a6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "All Elements of Category in View",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 524.65323942006182,
+        "Y": 536.15356534042007
+      },
+      {
+        "Id": "546396168bea457aadea6eb31b2f21c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Document.ActiveView",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 799.99608283284681,
+        "Y": 676.59027993487621
+      },
+      {
+        "Id": "d8f7bf095b2548938f9a872b47b8a778",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Enumerate Datum Extent Type",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 799.99608283284681,
+        "Y": 764.34263152523727
+      },
+      {
+        "Id": "39ef70ae85d14fd4a110d3950ada6b7a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Category.ByName",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 6.9278713491958683,
+        "Y": 536.31907156548641
+      },
+      {
+        "Id": "0fce4fe635844feb961169639e5a79d8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -124.36625627411547,
+        "Y": 536.31907156548641
+      }
+    ],
+    "Annotations": [],
+    "X": 606.90250416576691,
+    "Y": -305.72912157822026,
+    "Zoom": 1.3816363917522976
+  }
+}
