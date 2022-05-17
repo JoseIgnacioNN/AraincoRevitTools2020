@@ -1,0 +1,1029 @@
+{
+  "Uuid": "1f79f574-76ee-437e-913e-0b706e0913b2",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "asdf",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "5884104e-0f7b-41e8-81a9-ef11fffb3df6",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "813e84cefbc346198415db8e2661552a",
+      "Inputs": [
+        {
+          "Id": "1086f7d453ca4312b7ba8c5c1d2c5c70",
+          "Name": "refresh",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6be8d51ac44c4d6e9ecef0ca661a477f",
+          "Name": "elements",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns all elements currently selected by the user in the active document when this node ran."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "0b59c4d8-afe4-4063-bf7e-2195fa33e8a9",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "0cbf460cd01c418eab5f661dd1018425",
+      "Inputs": [
+        {
+          "Id": "93664dcc84bc40e4b0ce6308d62b49d1",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fcbcaed06c4c4d0a98af1a76f70671ef",
+          "Name": "points",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "10e555db5397431f9e7bf0125f9bed8d",
+          "Name": "curveEndpoints",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c3872c3efc8e4d0d8633417c813ee159",
+          "Name": "curves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b11b2003886f425eab5cd50c617c53fe",
+          "Name": "isPoint",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "344e0b3cad8d40e781e1e0c13c583932",
+          "Name": "isCurve",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "724b466551c649db88f8912e85de73b0",
+          "Name": "hasLocation",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cee8aef0fac040849498d2d580a2136a",
+          "Name": "angle",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9024f4d77e0b4ecbb22b6151aac9194c",
+          "Name": "hasRotation",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b3c8dbca7c8e4641b6286526761e0623",
+          "Name": "hasMulipleCurves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0f6f852ae7e8441a98b45e33758ad2db",
+          "Name": "mulipleCurves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the location of an element as point, curve or curve loop, along with some booleans to help filtering the results. Unlike the OOTB Element.GetLocation node, it also retunrs sketch lines of sketch-based elements like floor slabs as well as the element's rotation property."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "1e13eb9886ce47f59645cbbdf6488d39",
+      "Inputs": [
+        {
+          "Id": "4d8b0299227e480fa0099901ae0d266a",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d7868a426b964ffe94c9e2a1592d642d",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "870cbcfc926c44a3a104f96d28df7c12",
+      "Inputs": [
+        {
+          "Id": "71b57d8f795d42b1b6f32d95d3645944",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "900c47cc4d894e60a1d250c2aeda334c",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f29a30395abb489f9130fb04fa06660f",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Line.ByBestFitThroughPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Id": "370aa3d377a04535b2a853deb7bfd9e4",
+      "Inputs": [
+        {
+          "Id": "4b8db50b4f6f41969bb517c9a0a6dd12",
+          "Name": "bestFitPoints",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ea177e189c4243188b4f4b6148734b5a",
+          "Name": "Line",
+          "Description": "Line",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Line best approximating a scatter plot of Points.\n\nLine.ByBestFitThroughPoints (bestFitPoints: Point[]): Line"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "5884104e-0f7b-41e8-81a9-ef11fffb3df6",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "208bef3eefc940bf8cec639ebb8cfae0",
+      "Inputs": [
+        {
+          "Id": "4f3a1456c9324caabcdef60888b8fa99",
+          "Name": "refresh",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b1487fb18ea42ec91d912682e3c7b7f",
+          "Name": "elements",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns all elements currently selected by the user in the active document when this node ran."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "0b59c4d8-afe4-4063-bf7e-2195fa33e8a9",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "14babf309e71493ab6a5e41f775f8615",
+      "Inputs": [
+        {
+          "Id": "ab0848005963483bbe198855977146e1",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "af27eecf5d284f4393d844029f9f2b1b",
+          "Name": "points",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dde3344ec02f462c9278c3c6b9a58897",
+          "Name": "curveEndpoints",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "51e0763f48f04990b3522488d93bc304",
+          "Name": "curves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66a41bfca9a4429892d91487523dae6f",
+          "Name": "isPoint",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0bcd611a46b14090b28d9f53e78022ee",
+          "Name": "isCurve",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d5d752475867408b95d20e9db8750a24",
+          "Name": "hasLocation",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d3159233a4224b889cd0a3229e2f08df",
+          "Name": "angle",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d2ac3820cbcd4d0bafe7d39b7ea36171",
+          "Name": "hasRotation",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "932d170793424f9b83f76081f65df9e0",
+          "Name": "hasMulipleCurves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57a9294d5bb84ac2a23c83af622445fc",
+          "Name": "mulipleCurves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the location of an element as point, curve or curve loop, along with some booleans to help filtering the results. Unlike the OOTB Element.GetLocation node, it also retunrs sketch lines of sketch-based elements like floor slabs as well as the element's rotation property."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "92910d5acad9415aad9a222168801af3",
+      "Inputs": [
+        {
+          "Id": "94221a811dc6413bb4c24b7653a9fd2a",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1f11ce4353cc423eb4ebef4af9600eb7",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "b15442cdd25e4dde9077ebd40780ef8d",
+      "Inputs": [
+        {
+          "Id": "d38852de1b2c4b66b14fd1eb12cc22ac",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "894ca949f7fc413dbbb164c353e9cce4",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "131159c8703941fe8c5242890da71ea3",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Line.ByBestFitThroughPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Id": "70b2b78bf8b544d1bfa99b94a00ffa7a",
+      "Inputs": [
+        {
+          "Id": "4f0b1b12bb5549a3a7bb62ec2dafb6e1",
+          "Name": "bestFitPoints",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bbcd3e137df14eeda61e1b5218546bf9",
+          "Name": "Line",
+          "Description": "Line",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Line best approximating a scatter plot of Points.\n\nLine.ByBestFitThroughPoints (bestFitPoints: Point[]): Line"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "e8973504d09d4a90a382df3adab4a931",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "887b107dcde5464497d456d557cb7e42",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "5884104e-0f7b-41e8-81a9-ef11fffb3df6",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "bf0edffb38af47c0ad45e31742a8cc51",
+      "Inputs": [
+        {
+          "Id": "8ee3545f911d4e64bdd7a05b9a3004cc",
+          "Name": "refresh",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9c3f5991ad524caa91b99956d72b4289",
+          "Name": "elements",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns all elements currently selected by the user in the active document when this node ran."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "1a5f002836144de3b11067abaf9dd99a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "692c23bcf3e8410d9339c003d1c0bf93",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "0b59c4d8-afe4-4063-bf7e-2195fa33e8a9",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "95b21b66ec1a4f11b4676ced6e79cba0",
+      "Inputs": [
+        {
+          "Id": "6d66e3efcca74927a8327cf058a66dea",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "76930f563b804fc193f18f40d1a3609e",
+          "Name": "points",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af76861e738e40f48c6192c1a2d1965d",
+          "Name": "curveEndpoints",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c5a929bb5e8f41738a8d504421f8bc50",
+          "Name": "curves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6056d7e4dde84d65ae6896f64f0f1bd9",
+          "Name": "isPoint",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5655abc5ba9a4138bf64b47544d885b6",
+          "Name": "isCurve",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d0fa57653bd94bd1a79ef10a91ac0a66",
+          "Name": "hasLocation",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0137d5d6e10c49a29d6345ea8f798772",
+          "Name": "angle",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "718a15c519fc401aac52d6b9d93fc8a5",
+          "Name": "hasRotation",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1b6affa58881467982b825ec715528fc",
+          "Name": "hasMulipleCurves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "460f808773e342c0a4c7bd51dac2e4a8",
+          "Name": "mulipleCurves",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the location of an element as point, curve or curve loop, along with some booleans to help filtering the results. Unlike the OOTB Element.GetLocation node, it also retunrs sketch lines of sketch-based elements like floor slabs as well as the element's rotation property."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "ad0c292b5cc7472ca1ae5b5c6943a3e5",
+      "Inputs": [
+        {
+          "Id": "6a5d154192ef4895a63836c8b223880e",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b6c6ef0426848e98e7a32fe46a564c8",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ffc9eb94998148ed978a8032120bfa8a",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Line.ByBestFitThroughPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Id": "9422950024fc4070b2de43d3990e9943",
+      "Inputs": [
+        {
+          "Id": "94f46fade0074a54a8d76eead938b4be",
+          "Name": "bestFitPoints",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0b10d2b1d57d4f5fad867f8afc672f76",
+          "Name": "Line",
+          "Description": "Line",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Line best approximating a scatter plot of Points.\n\nLine.ByBestFitThroughPoints (bestFitPoints: Point[]): Line"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6be8d51ac44c4d6e9ecef0ca661a477f",
+      "End": "93664dcc84bc40e4b0ce6308d62b49d1",
+      "Id": "2c3627e7a3d347a99a680f2b1e04ee3b"
+    },
+    {
+      "Start": "10e555db5397431f9e7bf0125f9bed8d",
+      "End": "4d8b0299227e480fa0099901ae0d266a",
+      "Id": "3c731439f2be4447aff20b91368dd9af"
+    },
+    {
+      "Start": "d7868a426b964ffe94c9e2a1592d642d",
+      "End": "71b57d8f795d42b1b6f32d95d3645944",
+      "Id": "891dba4951ad4164b6bc52382953583b"
+    },
+    {
+      "Start": "f29a30395abb489f9130fb04fa06660f",
+      "End": "4b8db50b4f6f41969bb517c9a0a6dd12",
+      "Id": "6aa43da78792414c9d4a923dc84dc45b"
+    },
+    {
+      "Start": "9b1487fb18ea42ec91d912682e3c7b7f",
+      "End": "ab0848005963483bbe198855977146e1",
+      "Id": "21f60ade76b842c9a7f1ee6aa6a10957"
+    },
+    {
+      "Start": "dde3344ec02f462c9278c3c6b9a58897",
+      "End": "94221a811dc6413bb4c24b7653a9fd2a",
+      "Id": "13f4c9e7b1104f70a463233f67761c35"
+    },
+    {
+      "Start": "1f11ce4353cc423eb4ebef4af9600eb7",
+      "End": "d38852de1b2c4b66b14fd1eb12cc22ac",
+      "Id": "2018d97cb97f4effabdef06cf0e64a94"
+    },
+    {
+      "Start": "131159c8703941fe8c5242890da71ea3",
+      "End": "4f0b1b12bb5549a3a7bb62ec2dafb6e1",
+      "Id": "33661886714f406980e0133efa0c8ac6"
+    },
+    {
+      "Start": "887b107dcde5464497d456d557cb7e42",
+      "End": "4f3a1456c9324caabcdef60888b8fa99",
+      "Id": "a0daf5e7981645c4a2bc60c03875374b"
+    },
+    {
+      "Start": "9c3f5991ad524caa91b99956d72b4289",
+      "End": "6d66e3efcca74927a8327cf058a66dea",
+      "Id": "11a2b277f78a41779f54687b91cf257d"
+    },
+    {
+      "Start": "692c23bcf3e8410d9339c003d1c0bf93",
+      "End": "8ee3545f911d4e64bdd7a05b9a3004cc",
+      "Id": "4c077a82230c4303b33e5614ffa497f1"
+    },
+    {
+      "Start": "af76861e738e40f48c6192c1a2d1965d",
+      "End": "6a5d154192ef4895a63836c8b223880e",
+      "Id": "a1c2e26ba900466f9a2e379d987a7f07"
+    },
+    {
+      "Start": "ffc9eb94998148ed978a8032120bfa8a",
+      "End": "94f46fade0074a54a8d76eead938b4be",
+      "Id": "8e4ddf1097a64623ba68f556ce9b152b"
+    }
+  ],
+  "Dependencies": [
+    "5884104e-0f7b-41e8-81a9-ef11fffb3df6",
+    "0b59c4d8-afe4-4063-bf7e-2195fa33e8a9"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Crumple",
+      "Version": "2022.2.13",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "813e84cefbc346198415db8e2661552a",
+        "208bef3eefc940bf8cec639ebb8cfae0",
+        "bf0edffb38af47c0ad45e31742a8cc51"
+      ]
+    },
+    {
+      "Name": "Clockwork for Dynamo 2.x",
+      "Version": "2.4.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "0cbf460cd01c418eab5f661dd1018425",
+        "14babf309e71493ab6a5e41f775f8615",
+        "95b21b66ec1a4f11b4676ced6e79cba0"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 100.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.1.11775",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 199574.78665784936,
+      "EyeY": -38974.033061250746,
+      "EyeZ": -135065.39705566183,
+      "LookX": 0.0,
+      "LookY": 0.0,
+      "LookZ": 133058.4634619118,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "© CurrentSelection",
+        "Id": "813e84cefbc346198415db8e2661552a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 765.0,
+        "Y": 600.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Element.Location+",
+        "Id": "0cbf460cd01c418eab5f661dd1018425",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1286.5,
+        "Y": 601.5
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Watch",
+        "Id": "1e13eb9886ce47f59645cbbdf6488d39",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1703.0,
+        "Y": 719.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.Flatten",
+        "Id": "870cbcfc926c44a3a104f96d28df7c12",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2144.0,
+        "Y": 875.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line.ByBestFitThroughPoints",
+        "Id": "370aa3d377a04535b2a853deb7bfd9e4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2456.5,
+        "Y": 722.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "© CurrentSelection",
+        "Id": "208bef3eefc940bf8cec639ebb8cfae0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 604.83477963970472,
+        "Y": -454.74657310438215
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Element.Location+",
+        "Id": "14babf309e71493ab6a5e41f775f8615",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1126.3347796397047,
+        "Y": -453.24657310438215
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Watch",
+        "Id": "92910d5acad9415aad9a222168801af3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1542.8347796397047,
+        "Y": -335.74657310438215
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.Flatten",
+        "Id": "b15442cdd25e4dde9077ebd40780ef8d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1983.8347796397047,
+        "Y": -268.74657310438215
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line.ByBestFitThroughPoints",
+        "Id": "70b2b78bf8b544d1bfa99b94a00ffa7a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2296.3347796397047,
+        "Y": -332.24657310438215
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "e8973504d09d4a90a382df3adab4a931",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 427.75848474562133,
+        "Y": -312.77289931372718
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "© CurrentSelection",
+        "Id": "bf0edffb38af47c0ad45e31742a8cc51",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 629.04791447127866,
+        "Y": -1614.555731536761
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "1a5f002836144de3b11067abaf9dd99a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 451.9716195771947,
+        "Y": -1472.5820577461061
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Element.Location+",
+        "Id": "95b21b66ec1a4f11b4676ced6e79cba0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1150.5479144712735,
+        "Y": -1613.055731536761
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.Flatten",
+        "Id": "ad0c292b5cc7472ca1ae5b5c6943a3e5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1475.421102378926,
+        "Y": -1587.0865690451865
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line.ByBestFitThroughPoints",
+        "Id": "9422950024fc4070b2de43d3990e9943",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1674.0638559418035,
+        "Y": -1587.0865690451865
+      }
+    ],
+    "Annotations": [],
+    "X": -790.07274919379233,
+    "Y": 1681.5221105929259,
+    "Zoom": 0.75724628632923374
+  }
+}
