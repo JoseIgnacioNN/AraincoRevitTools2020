@@ -2,9 +2,14 @@
   "Uuid": "1f79f574-76ee-437e-913e-0b706e0913b2",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "elevacionColumNum",
+  "Name": "elevacionColumNum_script",
   "ElementResolver": {
-    "ResolutionMap": {}
+    "ResolutionMap": {
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
   },
   "Inputs": [],
   "Outputs": [],
@@ -3877,11 +3882,11 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "[\n\"CH_COLUMNA P\"+num,\n\"ELEV. PILAR P\"+num\n];",
+      "Code": "DSCore.List.Flatten([\"CH_COLUMNA P\"+num,\"ELEV. PILAR P\"+num],1);",
       "Id": "561d4f32e76144069a495995434eba19",
       "Inputs": [
         {
-          "Id": "8e1199970183409f8b7c3e8937c6e65f",
+          "Id": "3a160719a618405db48880eef8f8edf6",
           "Name": "num",
           "Description": "num",
           "UsingDefaultValue": false,
@@ -3892,7 +3897,7 @@
       ],
       "Outputs": [
         {
-          "Id": "efad4c4706c640d882f1b0c8feb22fae",
+          "Id": "27bff971bbc7413b8416c3ba0bb1a563",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -5088,8 +5093,8 @@
     },
     {
       "Start": "c7977875ec5d4c45b44544d281304fdb",
-      "End": "8e1199970183409f8b7c3e8937c6e65f",
-      "Id": "38e27cc0551642018894666f0739bac5"
+      "End": "3a160719a618405db48880eef8f8edf6",
+      "Id": "717605fa867b4f7e8b3a99d5ea843c19"
     },
     {
       "Start": "3f72f977a1614ee5b921bfac11a1eb01",
@@ -5097,9 +5102,9 @@
       "Id": "ef9302ee0ce04f19b5510f4d1f688aca"
     },
     {
-      "Start": "efad4c4706c640d882f1b0c8feb22fae",
+      "Start": "27bff971bbc7413b8416c3ba0bb1a563",
       "End": "cefaadadaa7c4c119d90573e8a289e2a",
-      "Id": "d8b58f6a56b6449bb73ef9310715d0c6"
+      "Id": "fadbd69b7ade4c4ebf500af44ebe299b"
     },
     {
       "Start": "4f954569c0164782917444b0551eabb7",
@@ -6384,8 +6389,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10170.064937585621,
-        "Y": -172.26242905752792
+        "X": 10054.972188134388,
+        "Y": -171.55376244945023
       },
       {
         "ShowGeometry": false,
@@ -6529,8 +6534,8 @@
       }
     ],
     "Annotations": [],
-    "X": -717.393252352357,
-    "Y": 402.6696296921574,
-    "Zoom": 0.24363647271964603
+    "X": -13817.768766351333,
+    "Y": 641.56608801802929,
+    "Zoom": 1.4111007751762792
   }
 }
