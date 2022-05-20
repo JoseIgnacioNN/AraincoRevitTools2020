@@ -832,37 +832,6 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "0eb7903f-71ea-41dc-96cf-477270fbea37",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "bc74cd412b8d41b89ffde8e9c34fb525",
-      "Inputs": [
-        {
-          "Id": "291c3e5384094863a917c5d1091fd591",
-          "Name": "element",
-          "Description": "Model element(s).\n\nElement bounding box will be\nused to determine the centroid.\n\nNB: Axis aligned\n\nElement",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "b9533469e7e7401db3deb29f85e7301c",
-          "Name": "Centroid",
-          "Description": "Element BB Centroid as point.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Returns the centroid of the element's axis-aligned bounding box."
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
       "FunctionSignature": "81963227-976a-489c-a959-0e82ab922fbe",
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
@@ -900,81 +869,6 @@
       ],
       "Replication": "Auto",
       "Description": "Identify the tagged and untagged elements.\r\nPlease note : This doesn't work with areas and spaces."
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Annotations.Tag.ByElementAndLocation@Revit.Elements.Element,Revit.Elements.Element,Revit.Elements.Element,Autodesk.DesignScript.Geometry.Point,bool,bool",
-      "Id": "6fb6802e08624a19997cbd243bd6944f",
-      "Inputs": [
-        {
-          "Id": "7fab448372054a52923da470f50ccf52",
-          "Name": "view",
-          "Description": "View to tag in.\n\nElement",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "3c4ab0fe94e04d59b6cad288f1f5a96f",
-          "Name": "element",
-          "Description": "Element to tag.\n\nElement",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "c726eb655de442ffa3596f68d11d136c",
-          "Name": "tagType",
-          "Description": "Tag type to use.\n\nElement",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a9ba8e25faf34a6e849bb8f895e2e235",
-          "Name": "location",
-          "Description": "Location point, default set to null -> element center.\n\nPoint",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "00937aec5cbd4f1d83f42f9f10b9a960",
-          "Name": "horizontal",
-          "Description": "Optional: Place tag horizontal, defaults set to true!\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "bed65028efa34582b8ce607e4a642ccb",
-          "Name": "addLeader",
-          "Description": "Optional: Add a leader, defaults set to false!\n\nbool\nDefault value : false",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "d06e1518604f44f3b6bc2df8e2f264cb",
-          "Name": "Tag",
-          "Description": "Tag as Dynamo type.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Longest",
-      "Description": "Create a Tag for a element at a specified location point.\n\nTag.ByElementAndLocation (view: Element, element: Element, tagType: Element, location: Point, horizontal: bool = true, addLeader: bool = false): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1082,7 +976,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "9c8abdf5e4b94c65b4c2232830106e62",
+          "Id": "e1b0fd5380634ee1812741f4fd47d9d4",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1123,6 +1017,249 @@
       ],
       "Replication": "Auto",
       "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Tag.ByElementAndLocation@Revit.Elements.Views.View,Revit.Elements.Element,Autodesk.DesignScript.Geometry.Point,bool,bool",
+      "Id": "3d01b9b427334cd0bfc1f5ae9f997148",
+      "Inputs": [
+        {
+          "Id": "618c8b9136524aa999b2859fa3356258",
+          "Name": "view",
+          "Description": "View to tag in\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "06d3ed121fb4413d83c51fd3e66da39c",
+          "Name": "element",
+          "Description": "Element to tag\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d938abf5138f48f0bbe1c8e307e2f572",
+          "Name": "location",
+          "Description": "Location point\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "35d23c0da4e243fe910339efcd9500b7",
+          "Name": "horizontal",
+          "Description": "Optional: Place tag horizontal, defaults to true\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f70806c3ec4b42bd8344181771b51bda",
+          "Name": "addLeader",
+          "Description": "Optional: Add a leader, defaults to false\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f34bb95c626343418b05878feae18b13",
+          "Name": "Tag",
+          "Description": "Tag",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Revit Tag for a Revit Element at a specified location point\n\nTag.ByElementAndLocation (view: View, element: Element, location: Point, horizontal: bool = true, addLeader: bool = false): Tag"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "0eb7903f-71ea-41dc-96cf-477270fbea37",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "2c270df722bc4e309ac63a9835883a35",
+      "Inputs": [
+        {
+          "Id": "8e42159d40aa4bf3b9375035093d65ce",
+          "Name": "element",
+          "Description": "Model element(s).\n\nElement bounding box will be\nused to determine the centroid.\n\nNB: Axis aligned\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8aa5b3c6bf5b4388a9fb35d0553620c5",
+          "Name": "Centroid",
+          "Description": "Element BB Centroid as point.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the centroid of the element's axis-aligned bounding box."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "4f750f46625c41d39b6d6e51b10ad6cd",
+      "Inputs": [
+        {
+          "Id": "0a754863034a41669f164e0ca6c75d31",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a2f4a689a2464074be1526ea404dd998",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "31611e863cd445b884909379b49ee018",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4ddfd20aab034e72b4e85ba55776f163",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Type\";",
+      "Id": "d495cbdc3a5c40acb8656171981604a3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8576c9e2e1dc451092d707ef367e251a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.ApplyFunction, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "5eaf74d0855a423da1d1266ded44501f",
+      "Inputs": [
+        {
+          "Id": "b3c5d09889984a4dbe1f5e7a8756db10",
+          "Name": "func",
+          "Description": "Function to apply.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12bab254b47646da9133e5efaeae9637",
+          "Name": "arg1",
+          "Description": "Argument #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a9330fa2ea294e229ad0ea7bdbc187c9",
+          "Name": "func(args)",
+          "Description": "Result of application.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Applies a function to arguments."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "x;\n[Imperative]\n{\n\tif(x == null)\n\t{\n\t\treturn = [];\n\t}\n\telse\n\t{\n\t\treturn = x;\n\t}\n};",
+      "Id": "0db54c6544874152a908d0122d32745c",
+      "Inputs": [
+        {
+          "Id": "d2f5066060c24e31a9b60b8f0d614940",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "deee1bb1824a4652a4308d3f8f643092",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "878c834f4333470c9df0bfcf50573605",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
     }
   ],
   "Connectors": [
@@ -1158,8 +1295,8 @@
     },
     {
       "Start": "f755e9b2573b462a90c52b5baa2d4664",
-      "End": "219918da814649ca939898f9cd5a663c",
-      "Id": "a59303ce5b8b4ce4be36bb1147770ebc"
+      "End": "d2f5066060c24e31a9b60b8f0d614940",
+      "Id": "35c60aa38f594fbb9d48d451b693f4df"
     },
     {
       "Start": "03de0d121fa24feb9b692cc31df355c6",
@@ -1208,13 +1345,13 @@
     },
     {
       "Start": "8783e7578b404d58b1442cdadf4c8f49",
-      "End": "e87ba2eb472c4ade88d3430b92678520",
-      "Id": "3388a6c5e8e946e4b30cc7ce9479d7a9"
+      "End": "12bab254b47646da9133e5efaeae9637",
+      "Id": "f63c9b505e9847218448cdfa2ec3dfb4"
     },
     {
       "Start": "448f98fb8c2e430d8a593293a5b4e06f",
-      "End": "000899eaea9f4b38b05b1e03fe2e9e30",
-      "Id": "0ff5c188eb1549f7859d868f207e52d9"
+      "End": "b3c5d09889984a4dbe1f5e7a8756db10",
+      "Id": "d916104490c744b586bf0127ec351624"
     },
     {
       "Start": "259bcd189ad149b1a5c450e87536a6d0",
@@ -1252,19 +1389,14 @@
       "Id": "bc9d4b9e39a44c7baf73743e4bd519df"
     },
     {
-      "Start": "b9533469e7e7401db3deb29f85e7301c",
-      "End": "a9ba8e25faf34a6e849bb8f895e2e235",
-      "Id": "d8a63b8c3f764477ae18ead8416d0ab3"
+      "Start": "20defd11d475496b94ca79eb0dd6a65b",
+      "End": "06d3ed121fb4413d83c51fd3e66da39c",
+      "Id": "2b3a257e62b646a0a5a8a264011b230e"
     },
     {
       "Start": "20defd11d475496b94ca79eb0dd6a65b",
-      "End": "291c3e5384094863a917c5d1091fd591",
-      "Id": "d47649acd65c4bc897d4bd0d07315994"
-    },
-    {
-      "Start": "20defd11d475496b94ca79eb0dd6a65b",
-      "End": "3c4ab0fe94e04d59b6cad288f1f5a96f",
-      "Id": "91f1374e42a04192bf25712a0bcb7cdb"
+      "End": "8e42159d40aa4bf3b9375035093d65ce",
+      "Id": "48399adf44034854a00ff5ba7b0de411"
     },
     {
       "Start": "72f6142224a54f1384f14fa7d5eb647a",
@@ -1273,8 +1405,8 @@
     },
     {
       "Start": "02745b055f6d4d4eab21bee3808ba27a",
-      "End": "c726eb655de442ffa3596f68d11d136c",
-      "Id": "ed850f356b0341b0a90285117779ed5d"
+      "End": "31611e863cd445b884909379b49ee018",
+      "Id": "91f5b8f421fb49f89d4000fc5d413d61"
     },
     {
       "Start": "4c89d99fa90d46b98ecb25afb44279f9",
@@ -1282,22 +1414,47 @@
       "Id": "155c5b70fe55433ea5112f5b6403e932"
     },
     {
-      "Start": "9c8abdf5e4b94c65b4c2232830106e62",
+      "Start": "e1b0fd5380634ee1812741f4fd47d9d4",
       "End": "6baeb8ef5b224d9ea330d9e23bf74a1a",
-      "Id": "75d4dc18364f43308451993f238e08ac"
+      "Id": "1e626d1108a64354bba349a515d50c10"
     },
     {
       "Start": "aceb98fe1cca40f4b786a286c65b750f",
-      "End": "7fab448372054a52923da470f50ccf52",
-      "Id": "4c76d8ebb69640db89f120e6cc73353f"
+      "End": "618c8b9136524aa999b2859fa3356258",
+      "Id": "5f4674ce8530478fab7e21bcafc42d6c"
+    },
+    {
+      "Start": "f34bb95c626343418b05878feae18b13",
+      "End": "0a754863034a41669f164e0ca6c75d31",
+      "Id": "707888a2512f40199f57c0d182c74211"
+    },
+    {
+      "Start": "8aa5b3c6bf5b4388a9fb35d0553620c5",
+      "End": "d938abf5138f48f0bbe1c8e307e2f572",
+      "Id": "70142e72fc3f46278bc3299b1708365d"
+    },
+    {
+      "Start": "8576c9e2e1dc451092d707ef367e251a",
+      "End": "a2f4a689a2464074be1526ea404dd998",
+      "Id": "5074423ec099422a9200973227e01cb6"
+    },
+    {
+      "Start": "a9330fa2ea294e229ad0ea7bdbc187c9",
+      "End": "000899eaea9f4b38b05b1e03fe2e9e30",
+      "Id": "115e5560a2a14bd0907929236dc5050d"
+    },
+    {
+      "Start": "878c834f4333470c9df0bfcf50573605",
+      "End": "219918da814649ca939898f9cd5a663c",
+      "Id": "cabe7c60faba4e2bad8f6d487d7669ec"
     }
   ],
   "Dependencies": [
     "0b59c4d8-afe4-4063-bf7e-2195fa33e8a9",
     "d6dbde59-f3f7-47b5-9e1e-f30991f58ac1",
     "3b14a7c8-036c-42ed-afe1-a5cb05df285d",
-    "0eb7903f-71ea-41dc-96cf-477270fbea37",
-    "81963227-976a-489c-a959-0e82ab922fbe"
+    "81963227-976a-489c-a959-0e82ab922fbe",
+    "0eb7903f-71ea-41dc-96cf-477270fbea37"
   ],
   "NodeLibraryDependencies": [
     {
@@ -1308,7 +1465,6 @@
         "12b4b2f14d7440c18f55105b0b4c98d2",
         "0c0d7ca317754553bd467a602fa640dc",
         "51bfa85498c94589af3c594067f8142f",
-        "6fb6802e08624a19997cbd243bd6944f",
         "0ebd25953fc74e64997bf9c24afdcdc0",
         "6b9cd393b1b74bbfbab0a9dfe2800125"
       ]
@@ -1332,23 +1488,30 @@
       ]
     },
     {
-      "Name": "Crumple",
-      "Version": "2022.2.13",
-      "ReferenceType": "Package",
-      "Nodes": [
-        "bc74cd412b8d41b89ffde8e9c34fb525"
-      ]
-    },
-    {
       "Name": "Genius Loci",
       "Version": "2020.8.3",
       "ReferenceType": "Package",
       "Nodes": [
         "9e9427d0736e4cca9c288b159b866ec6"
       ]
+    },
+    {
+      "Name": "Crumple",
+      "Version": "2022.2.13",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "2c270df722bc4e309ac63a9835883a35"
+      ]
     }
   ],
-  "Bindings": [],
+  "Bindings": [
+    {
+      "NodeId": "3d01b9b4-2733-4cd0-bfc1-f5ae9f997148",
+      "Binding": {
+        "ByElementAndLocation_InClassDecl-1_InFunctionScope-1_Instance0_3d01b9b4-2733-4cd0-bfc1-f5ae9f997148": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMy4xLjExNzc1JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT5mYWxzZTwvQmFzZS0wX0hhc0RhdGE+DQo8QmFzZS0wX0hhc05lc3RlZERhdGE+dHJ1ZTwvQmFzZS0wX0hhc05lc3RlZERhdGE+DQo8QmFzZS0wX05lc3RlZERhdGFDb3VudD4xMjwvQmFzZS0wX05lc3RlZERhdGFDb3VudD4NCjxCYXNlLTAtMF9IYXNEYXRhPnRydWU8L0Jhc2UtMC0wX0hhc0RhdGE+DQo8QmFzZS0wLTBfRGF0YSBpZD0icmVmLTMiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmtZend2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qSTRQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC0wX0RhdGE+DQo8QmFzZS0wLTBfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTBfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtMV9IYXNEYXRhPnRydWU8L0Jhc2UtMC0xX0hhc0RhdGE+DQo8QmFzZS0wLTFfRGF0YSBpZD0icmVmLTQiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmtaRHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qSTVQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC0xX0RhdGE+DQo8QmFzZS0wLTFfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTFfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtMl9IYXNEYXRhPnRydWU8L0Jhc2UtMC0yX0hhc0RhdGE+DQo8QmFzZS0wLTJfRGF0YSBpZD0icmVmLTUiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmtaVHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qTXdQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC0yX0RhdGE+DQo8QmFzZS0wLTJfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTJfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtM19IYXNEYXRhPnRydWU8L0Jhc2UtMC0zX0hhc0RhdGE+DQo8QmFzZS0wLTNfRGF0YSBpZD0icmVmLTYiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmtaand2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qTXhQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC0zX0RhdGE+DQo8QmFzZS0wLTNfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTNfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtNF9IYXNEYXRhPnRydWU8L0Jhc2UtMC00X0hhc0RhdGE+DQo8QmFzZS0wLTRfRGF0YSBpZD0icmVmLTciPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmxNRHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qTXlQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC00X0RhdGE+DQo8QmFzZS0wLTRfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTRfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtNV9IYXNEYXRhPnRydWU8L0Jhc2UtMC01X0hhc0RhdGE+DQo8QmFzZS0wLTVfRGF0YSBpZD0icmVmLTgiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmxNVHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qTXpQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC01X0RhdGE+DQo8QmFzZS0wLTVfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTVfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtNl9IYXNEYXRhPnRydWU8L0Jhc2UtMC02X0hhc0RhdGE+DQo8QmFzZS0wLTZfRGF0YSBpZD0icmVmLTkiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmxNand2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qTTBQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC02X0RhdGE+DQo8QmFzZS0wLTZfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTZfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtN19IYXNEYXRhPnRydWU8L0Jhc2UtMC03X0hhc0RhdGE+DQo8QmFzZS0wLTdfRGF0YSBpZD0icmVmLTEwIj5QRk5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxJSGh0Ykc1ek9uaHphVDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRXRhVzV6ZEdGdVkyVWlJSGh0Ykc1ek9uaHpaRDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRWlJSGh0Ykc1ek9sTlBRVkF0UlU1RFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJZ2VHMXNibk02VTA5QlVDMUZUbFk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbmh0YkhOdllYQXViM0puTDNOdllYQXZaVzUyWld4dmNHVXZJaUI0Yld4dWN6cGpiSEk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbTFwWTNKdmMyOW1kQzVqYjIwdmMyOWhjQzlsYm1OdlpHbHVaeTlqYkhJdk1TNHdJaUJUVDBGUUxVVk9WanBsYm1OdlpHbHVaMU4wZVd4bFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJK0RRbzhVMDlCVUMxRlRsWTZRbTlrZVQ0TkNqeGhNVHBUWlhKcFlXeHBlbUZpYkdWSlpDQnBaRDBpY21WbUxURWlJSGh0Ykc1ek9tRXhQU0pvZEhSd09pOHZjMk5vWlcxaGN5NXRhV055YjNOdlpuUXVZMjl0TDJOc2NpOXVjMkZ6YzJWdEwxSmxkbWwwVTJWeWRtbGpaWE11VUdWeWMybHpkR1Z1WTJVdlVtVjJhWFJUWlhKMmFXTmxjeVV5UXlVeU1GWmxjbk5wYjI0bE0wUXlMak11TVM0eE1UZ3pNQ1V5UXlVeU1FTjFiSFIxY21VbE0wUnVaWFYwY21Gc0pUSkRKVEl3VUhWaWJHbGpTMlY1Vkc5clpXNGxNMFJ1ZFd4c0lqNE5Danh6ZEhKcGJtZEpSQ0JwWkQwaWNtVm1MVE1pUGpSa01UTXlObVV4TFRSaE1UZ3RORGczT0MxaU5UUTRMVEJrWlRFeU5UaGpPVE01Tmkwd01EQTFPR0ZsTXp3dmMzUnlhVzVuU1VRK0RRbzhhVzUwU1VRK016WXpNak0xUEM5cGJuUkpSRDROQ2p3dllURTZVMlZ5YVdGc2FYcGhZbXhsU1dRK0RRbzhMMU5QUVZBdFJVNVdPa0p2WkhrK0RRbzhMMU5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxQZzBLPC9CYXNlLTAtN19EYXRhPg0KPEJhc2UtMC03X0hhc05lc3RlZERhdGE+ZmFsc2U8L0Jhc2UtMC03X0hhc05lc3RlZERhdGE+DQo8QmFzZS0wLThfSGFzRGF0YT50cnVlPC9CYXNlLTAtOF9IYXNEYXRhPg0KPEJhc2UtMC04X0RhdGEgaWQ9InJlZi0xMSI+UEZOUFFWQXRSVTVXT2tWdWRtVnNiM0JsSUhodGJHNXpPbmh6YVQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0V0YVc1emRHRnVZMlVpSUhodGJHNXpPbmh6WkQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0VpSUhodGJHNXpPbE5QUVZBdFJVNURQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SWdlRzFzYm5NNlUwOUJVQzFGVGxZOUltaDBkSEE2THk5elkyaGxiV0Z6TG5odGJITnZZWEF1YjNKbkwzTnZZWEF2Wlc1MlpXeHZjR1V2SWlCNGJXeHVjenBqYkhJOUltaDBkSEE2THk5elkyaGxiV0Z6TG0xcFkzSnZjMjltZEM1amIyMHZjMjloY0M5bGJtTnZaR2x1Wnk5amJISXZNUzR3SWlCVFQwRlFMVVZPVmpwbGJtTnZaR2x1WjFOMGVXeGxQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SStEUW84VTA5QlVDMUZUbFk2UW05a2VUNE5DanhoTVRwVFpYSnBZV3hwZW1GaWJHVkpaQ0JwWkQwaWNtVm1MVEVpSUhodGJHNXpPbUV4UFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwyTnNjaTl1YzJGemMyVnRMMUpsZG1sMFUyVnlkbWxqWlhNdVVHVnljMmx6ZEdWdVkyVXZVbVYyYVhSVFpYSjJhV05sY3lVeVF5VXlNRlpsY25OcGIyNGxNMFF5TGpNdU1TNHhNVGd6TUNVeVF5VXlNRU4xYkhSMWNtVWxNMFJ1WlhWMGNtRnNKVEpESlRJd1VIVmliR2xqUzJWNVZHOXJaVzRsTTBSdWRXeHNJajROQ2p4emRISnBibWRKUkNCcFpEMGljbVZtTFRNaVBqUmtNVE15Tm1VeExUUmhNVGd0TkRnM09DMWlOVFE0TFRCa1pURXlOVGhqT1RNNU5pMHdNREExT0dGbE5Ed3ZjM1J5YVc1blNVUStEUW84YVc1MFNVUStNell6TWpNMlBDOXBiblJKUkQ0TkNqd3ZZVEU2VTJWeWFXRnNhWHBoWW14bFNXUStEUW84TDFOUFFWQXRSVTVXT2tKdlpIaytEUW84TDFOUFFWQXRSVTVXT2tWdWRtVnNiM0JsUGcwSzwvQmFzZS0wLThfRGF0YT4NCjxCYXNlLTAtOF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTAtOF9IYXNOZXN0ZWREYXRhPg0KPEJhc2UtMC05X0hhc0RhdGE+dHJ1ZTwvQmFzZS0wLTlfSGFzRGF0YT4NCjxCYXNlLTAtOV9EYXRhIGlkPSJyZWYtMTIiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqTXVNUzR4TVRnek1DVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQalJrTVRNeU5tVXhMVFJoTVRndE5EZzNPQzFpTlRRNExUQmtaVEV5TlRoak9UTTVOaTB3TURBMU9HRmxOVHd2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpZek1qTTNQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC05X0RhdGE+DQo8QmFzZS0wLTlfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTlfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtMTBfSGFzRGF0YT50cnVlPC9CYXNlLTAtMTBfSGFzRGF0YT4NCjxCYXNlLTAtMTBfRGF0YSBpZD0icmVmLTEzIj5QRk5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxJSGh0Ykc1ek9uaHphVDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRXRhVzV6ZEdGdVkyVWlJSGh0Ykc1ek9uaHpaRDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRWlJSGh0Ykc1ek9sTlBRVkF0UlU1RFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJZ2VHMXNibk02VTA5QlVDMUZUbFk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbmh0YkhOdllYQXViM0puTDNOdllYQXZaVzUyWld4dmNHVXZJaUI0Yld4dWN6cGpiSEk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbTFwWTNKdmMyOW1kQzVqYjIwdmMyOWhjQzlsYm1OdlpHbHVaeTlqYkhJdk1TNHdJaUJUVDBGUUxVVk9WanBsYm1OdlpHbHVaMU4wZVd4bFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJK0RRbzhVMDlCVUMxRlRsWTZRbTlrZVQ0TkNqeGhNVHBUWlhKcFlXeHBlbUZpYkdWSlpDQnBaRDBpY21WbUxURWlJSGh0Ykc1ek9tRXhQU0pvZEhSd09pOHZjMk5vWlcxaGN5NXRhV055YjNOdlpuUXVZMjl0TDJOc2NpOXVjMkZ6YzJWdEwxSmxkbWwwVTJWeWRtbGpaWE11VUdWeWMybHpkR1Z1WTJVdlVtVjJhWFJUWlhKMmFXTmxjeVV5UXlVeU1GWmxjbk5wYjI0bE0wUXlMak11TVM0eE1UZ3pNQ1V5UXlVeU1FTjFiSFIxY21VbE0wUnVaWFYwY21Gc0pUSkRKVEl3VUhWaWJHbGpTMlY1Vkc5clpXNGxNMFJ1ZFd4c0lqNE5Danh6ZEhKcGJtZEpSQ0JwWkQwaWNtVm1MVE1pUGpSa01UTXlObVV4TFRSaE1UZ3RORGczT0MxaU5UUTRMVEJrWlRFeU5UaGpPVE01Tmkwd01EQTFPR0ZsTmp3dmMzUnlhVzVuU1VRK0RRbzhhVzUwU1VRK016WXpNak00UEM5cGJuUkpSRDROQ2p3dllURTZVMlZ5YVdGc2FYcGhZbXhsU1dRK0RRbzhMMU5QUVZBdFJVNVdPa0p2WkhrK0RRbzhMMU5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxQZzBLPC9CYXNlLTAtMTBfRGF0YT4NCjxCYXNlLTAtMTBfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTEwX0hhc05lc3RlZERhdGE+DQo8QmFzZS0wLTExX0hhc0RhdGE+dHJ1ZTwvQmFzZS0wLTExX0hhc0RhdGE+DQo8QmFzZS0wLTExX0RhdGEgaWQ9InJlZi0xNCI+UEZOUFFWQXRSVTVXT2tWdWRtVnNiM0JsSUhodGJHNXpPbmh6YVQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0V0YVc1emRHRnVZMlVpSUhodGJHNXpPbmh6WkQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0VpSUhodGJHNXpPbE5QUVZBdFJVNURQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SWdlRzFzYm5NNlUwOUJVQzFGVGxZOUltaDBkSEE2THk5elkyaGxiV0Z6TG5odGJITnZZWEF1YjNKbkwzTnZZWEF2Wlc1MlpXeHZjR1V2SWlCNGJXeHVjenBqYkhJOUltaDBkSEE2THk5elkyaGxiV0Z6TG0xcFkzSnZjMjltZEM1amIyMHZjMjloY0M5bGJtTnZaR2x1Wnk5amJISXZNUzR3SWlCVFQwRlFMVVZPVmpwbGJtTnZaR2x1WjFOMGVXeGxQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SStEUW84VTA5QlVDMUZUbFk2UW05a2VUNE5DanhoTVRwVFpYSnBZV3hwZW1GaWJHVkpaQ0JwWkQwaWNtVm1MVEVpSUhodGJHNXpPbUV4UFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwyTnNjaTl1YzJGemMyVnRMMUpsZG1sMFUyVnlkbWxqWlhNdVVHVnljMmx6ZEdWdVkyVXZVbVYyYVhSVFpYSjJhV05sY3lVeVF5VXlNRlpsY25OcGIyNGxNMFF5TGpNdU1TNHhNVGd6TUNVeVF5VXlNRU4xYkhSMWNtVWxNMFJ1WlhWMGNtRnNKVEpESlRJd1VIVmliR2xqUzJWNVZHOXJaVzRsTTBSdWRXeHNJajROQ2p4emRISnBibWRKUkNCcFpEMGljbVZtTFRNaVBqUmtNVE15Tm1VeExUUmhNVGd0TkRnM09DMWlOVFE0TFRCa1pURXlOVGhqT1RNNU5pMHdNREExT0dGbE56d3ZjM1J5YVc1blNVUStEUW84YVc1MFNVUStNell6TWpNNVBDOXBiblJKUkQ0TkNqd3ZZVEU2VTJWeWFXRnNhWHBoWW14bFNXUStEUW84TDFOUFFWQXRSVTVXT2tKdlpIaytEUW84TDFOUFFWQXRSVTVXT2tWdWRtVnNiM0JsUGcwSzwvQmFzZS0wLTExX0RhdGE+DQo8QmFzZS0wLTExX0hhc05lc3RlZERhdGE+ZmFsc2U8L0Jhc2UtMC0xMV9IYXNOZXN0ZWREYXRhPg0KPC9hMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXI+DQo8L1NPQVAtRU5WOkJvZHk+DQo8L1NPQVAtRU5WOkVudmVsb3BlPg0K"
+      }
+    }
+  ],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
@@ -1360,321 +1523,361 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": -43660.925764168038,
-      "EyeY": 140810.01588176488,
-      "EyeZ": 18390.64357588259,
-      "LookX": 43720.228530721368,
-      "LookY": -140767.79233087593,
-      "LookZ": -18387.837937312193,
+      "EyeX": -54.553056196347363,
+      "EyeY": 175.6466867565874,
+      "EyeZ": 22.943904687475548,
+      "LookX": 54.553056196347363,
+      "LookY": -175.6466867565874,
+      "LookZ": -22.943904687475548,
       "UpX": 0.79012930468039655,
       "UpY": 0.51503807491005771,
       "UpZ": -0.33231229781370458
     },
     "NodeViews": [
       {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
         "Id": "12b4b2f14d7440c18f55105b0b4c98d2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Document.ActiveView",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 429.65406987726192,
-        "Y": 614.82172458605135
+        "X": 35.056174103702688,
+        "Y": 614.02294342051778
       },
       {
+        "ShowGeometry": false,
+        "Name": "All Elements of Category in View",
         "Id": "bbcf086a7f964dcd8cd5ba9e67442e7c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "All Elements of Category in View",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1278.654741662577,
-        "Y": -211.41757110417927
+        "X": 884.05684588901772,
+        "Y": -212.21635226971284
       },
       {
+        "ShowGeometry": false,
+        "Name": "Code Block",
         "Id": "9d3183f47c70492c87a0c13f5ddcc042",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1159.4008994426908,
-        "Y": -181.8071780563958
+        "X": 764.80300366913161,
+        "Y": -182.60595922192937
       },
       {
+        "ShowGeometry": false,
+        "Name": "Category.ByName",
         "Id": "161de493acde47abbcbe84eb1798ad49",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.ByName",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1278.654741662577,
-        "Y": -104.38745821049218
+        "X": 884.05684588901772,
+        "Y": -105.18623937602575
       },
       {
+        "ShowGeometry": false,
+        "Name": "Code Block",
         "Id": "14748926f2094518a170e6aca69e1d96",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1278.654741662577,
-        "Y": -23.357345316805095
+        "X": 884.05684588901772,
+        "Y": -24.156126482338664
       },
       {
+        "ShowGeometry": false,
+        "Name": "Element.Location+",
         "Id": "2a0c3bf8967a49578de5b112f59c9199",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element.Location+",
-        "ShowGeometry": false,
         "Excluded": false,
         "X": 3411.4142522525076,
         "Y": -142.80567611128026
       },
       {
+        "ShowGeometry": false,
+        "Name": "Document.ActiveView",
         "Id": "0c0d7ca317754553bd467a602fa640dc",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Document.ActiveView",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 3960.3409267114894,
-        "Y": 105.0328694929039
+        "X": 4201.8544170811174,
+        "Y": 123.7666216812342
       },
       {
+        "ShowGeometry": false,
+        "Name": "View.Plane",
         "Id": "307d83b38d0d4aeb854dad2d6269480f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "View.Plane",
-        "ShowGeometry": false,
         "Excluded": false,
-        "X": 3989.3409267114894,
-        "Y": 19.973439094117168
+        "X": 4230.8544170811174,
+        "Y": 38.707191282447468
       },
       {
+        "ShowGeometry": false,
+        "Name": "Walls.WallType",
         "Id": "e6ca06ee2eaf4a7c93e0e04483aa146c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Walls.WallType",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1519.2410263146394,
-        "Y": -148.41820980074073
+        "X": 1124.6431305410802,
+        "Y": -149.2169909662743
       },
       {
+        "ShowGeometry": false,
+        "Name": "WallType.Kind",
         "Id": "51bfa85498c94589af3c594067f8142f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "WallType.Kind",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1720.2042187244763,
-        "Y": -148.41820980074073
+        "X": 1325.606322950917,
+        "Y": -149.2169909662743
       },
       {
+        "ShowGeometry": false,
+        "Name": "==",
         "Id": "8a1090fb991845f692a08c36f2f717c4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "==",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1939.0512878664488,
-        "Y": -148.41820980074073
+        "X": 1544.4533920928895,
+        "Y": -149.2169909662743
       },
       {
+        "ShowGeometry": false,
+        "Name": "Code Block",
         "Id": "bb7cea2203bb461a9e13ecc58bd3b90c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 1830.2042187244763,
-        "Y": -68.550235615499844
+        "X": 1435.606322950917,
+        "Y": -69.349016781033413
       },
       {
+        "ShowGeometry": false,
+        "Name": "List.FilterByBoolMask",
         "Id": "5fde11913ec94930a7bf8305529f8772",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "List.FilterByBoolMask",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 2132.41044622151,
-        "Y": -209.65730078415123
+        "X": 1737.8125504479508,
+        "Y": -210.4560819496848
       },
       {
+        "ShowGeometry": false,
+        "Name": "Element.GetMaterials",
         "Id": "4bb585d6bdbd4c1494a1a6c898c9b121",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element.GetMaterials",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 2330.7160862965357,
-        "Y": -158.0399016270396
+        "X": 1936.1181905229764,
+        "Y": -158.83868279257317
       },
       {
+        "ShowGeometry": false,
+        "Name": "List.Flatten",
         "Id": "1aa5ee37afed4910985f82b7ab3a10ea",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "List.Flatten",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 2603.4293832371163,
-        "Y": -158.0399016270396
+        "X": 2208.8314874635571,
+        "Y": -158.83868279257317
       },
       {
+        "ShowGeometry": false,
+        "Name": "Material.Name",
         "Id": "0d1b3af679cf4fd480a59581f76dae4c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Material.Name",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 2797.142680177697,
-        "Y": -158.0399016270396
+        "X": 2633.9784706414325,
+        "Y": -46.7756527078385
       },
       {
+        "ShowGeometry": false,
+        "Name": "==",
         "Id": "adabab1062c04dc5813b02e003495721",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "==",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 3007.8559771182777,
         "Y": -158.0399016270396
       },
       {
+        "ShowGeometry": false,
+        "Name": "Code Block",
         "Id": "0db44ac7d1b840008457e9413dcfd70b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2890.8559771182777,
         "Y": -51.043562658849737
       },
       {
+        "ShowGeometry": false,
+        "Name": "List.FilterByBoolMask",
         "Id": "d20735e4a4174d3385116bae8233bc8c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "List.FilterByBoolMask",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 3206.5010698553915,
         "Y": -209.65730078415123
       },
       {
+        "ShowGeometry": false,
+        "Name": "Vector.IsParallelToPlane",
         "Id": "d6e4f189fd1a48e9a7469a2ddb931b07",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Vector.IsParallelToPlane",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 3985.3409267114894,
-        "Y": -91.085991304669562
+        "X": 4226.8544170811174,
+        "Y": -72.352239116339263
       },
       {
+        "ShowGeometry": false,
+        "Name": "Line.Direction",
         "Id": "f4705aa0224e4738aab2dcd103e09873",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Line.Direction",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 3762.0527746029175,
-        "Y": -91.260739939918039
+        "X": 4003.5662649725446,
+        "Y": -72.52698775158774
       },
       {
+        "ShowGeometry": false,
+        "Name": "List.FilterByBoolMask",
         "Id": "8b2aa90aff12496da56f47e50f1e50ae",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "List.FilterByBoolMask",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 4196.39880217202,
-        "Y": -209.65730078415123
+        "X": 4478.1531797451307,
+        "Y": -205.12621466763829
       },
       {
-        "Id": "bc74cd412b8d41b89ffde8e9c34fb525",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Name": "© ElementCentroid",
-        "ShowGeometry": true,
-        "Excluded": false,
-        "X": 4703.1687107874741,
-        "Y": -131.16204249491477
-      },
-      {
+        "ShowGeometry": false,
+        "Name": "Element TaggedStatus",
         "Id": "9e9427d0736e4cca9c288b159b866ec6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element TaggedStatus",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 4444.8192192944471,
-        "Y": -209.83394082397928
+        "X": 4726.5735968675608,
+        "Y": -205.30285470746605
       },
       {
-        "Id": "6fb6802e08624a19997cbd243bd6944f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Name": "Tag.ByElementAndLocation",
-        "ShowGeometry": true,
-        "Excluded": false,
-        "X": 5559.2228889557191,
-        "Y": -208.1451976215053
-      },
-      {
+        "ShowGeometry": false,
+        "Name": "Family.ByName",
         "Id": "0ebd25953fc74e64997bf9c24afdcdc0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Family.ByName",
-        "ShowGeometry": false,
         "Excluded": false,
-        "X": 5038.8881923369991,
-        "Y": -46.816754385029128
+        "X": 5655.1153587401595,
+        "Y": -89.867293612260767
       },
       {
+        "ShowGeometry": false,
+        "Name": "FamilyType.ByFamilyAndName",
         "Id": "93c0136b479a4b53b149a4645ec5c0f7",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "FamilyType.ByFamilyAndName",
-        "ShowGeometry": false,
         "Excluded": false,
-        "X": 5291.5598482440992,
-        "Y": -46.816754385029128
+        "X": 5907.7870146472605,
+        "Y": -89.867293612260767
       },
       {
+        "ShowGeometry": false,
+        "Name": "Code Block",
         "Id": "b358baa95b9c461cad35f66ea6f8c408",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": false,
         "Excluded": false,
-        "X": 4972.8881923369991,
-        "Y": 61.087191161811859
+        "X": 5589.1153587401595,
+        "Y": 18.03665193458022
       },
       {
+        "ShowGeometry": false,
+        "Name": "Code Block",
         "Id": "afe86434cd7b4bba958584f3d5039619",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": false,
         "Excluded": false,
-        "X": 5291.5598482440992,
-        "Y": 59.280193220730723
+        "X": 5907.7870146472605,
+        "Y": 16.229653993499085
       },
       {
+        "ShowGeometry": false,
+        "Name": "Document.ActiveView",
         "Id": "6b9cd393b1b74bbfbab0a9dfe2800125",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Document.ActiveView",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 5559.2228889557191,
-        "Y": -290.40774124153506
+        "X": 5279.8749683261458,
+        "Y": -286.637762453263
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Tag.ByElementAndLocation",
+        "Id": "3d01b9b427334cd0bfc1f5ae9f997148",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5279.8749683261458,
+        "Y": -204.3258603803734
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "© ElementCentroid",
+        "Id": "2c270df722bc4e309ac63a9835883a35",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5000.4975451256005,
+        "Y": -105.0928066573299
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Element.SetParameterByName",
+        "Id": "4f750f46625c41d39b6d6e51b10ad6cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6164.625375792647,
+        "Y": -199.70552517256647
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "d495cbdc3a5c40acb8656171981604a3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6164.625375792647,
+        "Y": -66.479227532761911
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Function Apply",
+        "Id": "5eaf74d0855a423da1d1266ded44501f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2681.9784706414325,
+        "Y": -158.0399016270396
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "0db54c6544874152a908d0122d32745c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3719.7712874353897,
+        "Y": -86.2543586198507
       }
     ],
     "Annotations": [],
-    "X": -1524.033760090181,
-    "Y": 535.84157887045171,
-    "Zoom": 0.62474079080925371
+    "X": 623.33081471150808,
+    "Y": 705.52929111155584,
+    "Zoom": 0.12893192647053037
   }
 }
