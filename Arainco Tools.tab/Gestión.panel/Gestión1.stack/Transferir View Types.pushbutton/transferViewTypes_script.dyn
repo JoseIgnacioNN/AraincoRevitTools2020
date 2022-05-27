@@ -2,7 +2,7 @@
   "Uuid": "d8de8ebb-5f9c-4b47-a940-8fa40eb7a3cd",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "viewTemplates",
+  "Name": "transferViewTypes_script",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -68,75 +68,6 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows you to select a file on the system to get its filename"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Views.ViewTemplate.All@Orchid.RevitProject.Common.Document,bool",
-      "Id": "8d97196e9e5c4a2db6f019c74058c690",
-      "Inputs": [
-        {
-          "Id": "c9fe02f276054ca5a5ba411c56fd9f70",
-          "Name": "document",
-          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f1d5fb65b48e40de8ee3301c0b368004",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "1a0cfc3632fa4a4fb3810c26257b2373",
-          "Name": "ViewTemplate",
-          "Description": "ViewTemplate.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "All view template in document Note: Due to limitations in dynamo will 3D templates fail!\n\nViewTemplate.All (document: Document = null, condense: bool = true): var[]..[]"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitProject.Common.Document.ToOrchidType@var",
-      "Id": "bb0ed4f022704323819cff93aea863b4",
-      "Inputs": [
-        {
-          "Id": "e8c18fa2eeac41668323109734ce1c16",
-          "Name": "document",
-          "Description": "Document as Revit type.\n\nvar",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "dda9219b876a4d35917b8d2f9e5e1222",
-          "Name": "Document",
-          "Description": "Document as Orchid type.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Convert Autodesk Revit document to Orchid document.\n\nDocument.ToOrchidType (document: var): Document"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -795,12 +726,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"Transferir View Templates\";",
+      "Code": "\"Transferir View Types\";",
       "Id": "19022fed8f504ed985a95c50801d2fdf",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "a2d846247486466991d88054f21c1b31",
+          "Id": "f2593f24bade41dbba2e6aba1c5aa3df",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -988,45 +919,6 @@
       ],
       "Replication": "Auto",
       "Description": "Create a form with multiple inputs. \r\nsee www.data-shapes.net for tutorials and infos!"
-    },
-    {
-      "ConcreteType": "CoreNodeModels.HigherOrder.ApplyFunction, CoreNodeModels",
-      "VariableInputPorts": true,
-      "NodeType": "ExtensionNode",
-      "Id": "7f250efc19c545fea3abefaedef7eb87",
-      "Inputs": [
-        {
-          "Id": "e87fcd756a6048db8ba543a5727c36b3",
-          "Name": "func",
-          "Description": "Function to apply.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "2e62b7e24d574e6f9560c1f769840a9d",
-          "Name": "arg1",
-          "Description": "Argument #1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "6a126beeaf324072b6cd602f19411191",
-          "Name": "func(args)",
-          "Description": "Result of application.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Applies a function to arguments."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1426,6 +1318,96 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Rhythm.Revit.Selection.Collector.ElementsOfTypeInDocument@var,var",
+      "Id": "c8b4cdd4198e4752b3394df836b5e186",
+      "Inputs": [
+        {
+          "Id": "8e3c6ca13e084560a0cf4b41b8073b63",
+          "Name": "document",
+          "Description": "The document to collect from. Preferably the document title obtained from Applications.OpenDocumentFile.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2dfe151eb34341c7913c649de70a48f5",
+          "Name": "elementType",
+          "Description": "The element type to collect.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6da71234f9de4f85a049dff3b5e834cf",
+          "Name": "element",
+          "Description": "The elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node will collect all elements of type from given document.\n\nCollector.ElementsOfTypeInDocument (document: var, elementType: var): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "b2682366-412a-4bcf-931f-4fab55cbce92",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "fc699376d5494a8d9860f924d1d9a7bc",
+      "Inputs": [
+        {
+          "Id": "620e620d0a7c40d198f12d2f07aa35c5",
+          "Name": "name",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "33cad260cf3d4845b4c669a5e3b0f579",
+          "Name": "elementType",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Given an element type name, if it finds a match it will return that element type."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"ViewFamilyType\";",
+      "Id": "1d1a8996b2d44d9896717885475b10e8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a1c2ec7c839b4a17934f94ca75a42bb4",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
     }
   ],
   "Connectors": [
@@ -1440,21 +1422,6 @@
       "Id": "ed064fd790aa4d5f97cb32c9556e56ff"
     },
     {
-      "Start": "1a0cfc3632fa4a4fb3810c26257b2373",
-      "End": "1c3e3bb4e55f49168201364197426f61",
-      "Id": "3b67e0d70648480ab9beb21f13ceaf9c"
-    },
-    {
-      "Start": "1a0cfc3632fa4a4fb3810c26257b2373",
-      "End": "97f5274f363740839357552aea3227df",
-      "Id": "cb0a00b955e64ba7bd1c1b737df6c937"
-    },
-    {
-      "Start": "dda9219b876a4d35917b8d2f9e5e1222",
-      "End": "e87fcd756a6048db8ba543a5727c36b3",
-      "Id": "bbf54fc820ca4e33b218bbda0c1db782"
-    },
-    {
       "Start": "dcba1b9942724708a997a9abbb8070b0",
       "End": "d417fd1ad7db4b1490f02e8f31765e3e",
       "Id": "aa73f556d59e4fdda59831ea3aedf0b0"
@@ -1462,7 +1429,7 @@
     {
       "Start": "b2a8f1b077b84adf98ccb95d2f82dbcd",
       "End": "e505119209dd4208b658ca3aae1a21c0",
-      "Id": "b81c2442e80e4d39ba55e6fbb62d1bf6"
+      "Id": "f74ca7a189694a2fade7cc561d7bb516"
     },
     {
       "Start": "2da514408f7245d8b39def8760e95412",
@@ -1537,7 +1504,7 @@
     {
       "Start": "6fc982d4f61f47319a46417ac1528fb2",
       "End": "366c6c98e22f486195d317068698dca2",
-      "Id": "503941e397e747d398d046734ec8b0dd"
+      "Id": "0ea60237af8e42a89932abec1b96cb6b"
     },
     {
       "Start": "972bbf2a7bf44ea1ae20d99ad5f4fdd4",
@@ -1555,9 +1522,9 @@
       "Id": "2fb060f4050a463eb7f4f516a02546d6"
     },
     {
-      "Start": "a2d846247486466991d88054f21c1b31",
+      "Start": "f2593f24bade41dbba2e6aba1c5aa3df",
       "End": "d7675f085c0f40ef95586bf45850f997",
-      "Id": "d3d54885599b41f88c2fa23fbe2002a2"
+      "Id": "7ac3239589b34ca492e4d692ab3e3f0b"
     },
     {
       "Start": "e06b4df2e49e4ea49dbbf76e185378a2",
@@ -1590,11 +1557,6 @@
       "Id": "752d2c34877a47c39880fe8c79fcdc68"
     },
     {
-      "Start": "6a126beeaf324072b6cd602f19411191",
-      "End": "c9fe02f276054ca5a5ba411c56fd9f70",
-      "Id": "6f6c897ae7bc448e9ac9ad4ab8c080e1"
-    },
-    {
       "Start": "8a55137107824ef49adfec7898377899",
       "End": "792422c3c3b8428596738ccd89d4e074",
       "Id": "8c06922ea59944789af9a41a1ff48f31"
@@ -1621,13 +1583,13 @@
     },
     {
       "Start": "5d84120c0b0a41ae99bc82e2a3f1d363",
-      "End": "2e62b7e24d574e6f9560c1f769840a9d",
-      "Id": "e72f019082f84acf9e0328bb86718b1f"
+      "End": "20ddc537653e4016ac81809153600ffd",
+      "Id": "4c597888d3dc45008111d6822c20bcd5"
     },
     {
       "Start": "5d84120c0b0a41ae99bc82e2a3f1d363",
-      "End": "20ddc537653e4016ac81809153600ffd",
-      "Id": "4c597888d3dc45008111d6822c20bcd5"
+      "End": "8e3c6ca13e084560a0cf4b41b8073b63",
+      "Id": "2c0ef4443cca4835bb1eeeb2ff5c2e4b"
     },
     {
       "Start": "e4eebf3353be4fcfb2ef4734b489bf63",
@@ -1653,6 +1615,26 @@
       "Start": "3532d74bc4a94547b5608b1063d747c7",
       "End": "c459c8ffbe7b4dce85b0de9b7f5a90a6",
       "Id": "8387fec0a8f94c3ba8a030caf7d63dab"
+    },
+    {
+      "Start": "6da71234f9de4f85a049dff3b5e834cf",
+      "End": "1c3e3bb4e55f49168201364197426f61",
+      "Id": "0049798c90fc4a2e8c6a9bb1acb88914"
+    },
+    {
+      "Start": "6da71234f9de4f85a049dff3b5e834cf",
+      "End": "97f5274f363740839357552aea3227df",
+      "Id": "401a51ee568d46b2a5521abd340af334"
+    },
+    {
+      "Start": "33cad260cf3d4845b4c669a5e3b0f579",
+      "End": "2dfe151eb34341c7913c649de70a48f5",
+      "Id": "029dce531a954eb8b03ee6d111c9e2d0"
+    },
+    {
+      "Start": "a1c2ec7c839b4a17934f94ca75a42bb4",
+      "End": "620e620d0a7c40d198f12d2f07aa35c5",
+      "Id": "a1773f525cd547f0b25599c90862faec"
     }
   ],
   "Dependencies": [
@@ -1660,7 +1642,8 @@
     "219697d9-d6eb-4f4a-97d6-1fc8acac27a7",
     "0dd4bbc7-3594-4c4f-8e7d-760421e4bc9b",
     "c3a36eb7-8fe8-4417-b31e-ccc9fded769b",
-    "8543a5f0-8d75-43d3-88b3-aebd95b1ada4"
+    "8543a5f0-8d75-43d3-88b3-aebd95b1ada4",
+    "b2682366-412a-4bcf-931f-4fab55cbce92"
   ],
   "NodeLibraryDependencies": [
     {
@@ -1670,17 +1653,8 @@
       "Nodes": [
         "0484da1a980c47c29cce76faa45789ed",
         "16c122aad7644921a2767402d430c7c0",
-        "4a28f598f55749048e90de942c34348f"
-      ]
-    },
-    {
-      "Name": "Orchid",
-      "Version": "200.4.0.7938",
-      "ReferenceType": "Package",
-      "Nodes": [
-        "8d97196e9e5c4a2db6f019c74058c690",
-        "bb0ed4f022704323819cff93aea863b4",
-        "a9e75524aabf4f2b9a672795589f5a68"
+        "4a28f598f55749048e90de942c34348f",
+        "c8b4cdd4198e4752b3394df836b5e186"
       ]
     },
     {
@@ -1701,6 +1675,22 @@
       "ReferenceType": "Package",
       "Nodes": [
         "bb18c20448f04fa3ba32a2e1db00765b"
+      ]
+    },
+    {
+      "Name": "Orchid",
+      "Version": "200.4.0.7938",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "a9e75524aabf4f2b9a672795589f5a68"
+      ]
+    },
+    {
+      "Name": "Crumple",
+      "Version": "2022.2.13",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "fc699376d5494a8d9860f924d1d9a7bc"
       ]
     }
   ],
@@ -1746,26 +1736,6 @@
         "Excluded": false,
         "X": -2213.8175957937592,
         "Y": 601.05886635951128
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "ViewTemplate.All",
-        "Id": "8d97196e9e5c4a2db6f019c74058c690",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1213.2899571420432,
-        "Y": 480.87150384652705
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Document.ToOrchidType",
-        "Id": "bb0ed4f022704323819cff93aea863b4",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 876.858191726466,
-        "Y": 399.043893117629
       },
       {
         "ShowGeometry": true,
@@ -1904,8 +1874,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1276.2899571420432,
-        "Y": 398.45192754660377
+        "X": 1147.74904564617,
+        "Y": 424.49868332567479
       },
       {
         "ShowGeometry": false,
@@ -1946,16 +1916,6 @@
         "Excluded": false,
         "X": 2245.1554867592254,
         "Y": 809.04552165624364
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Function Apply",
-        "Id": "7f250efc19c545fea3abefaedef7eb87",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 965.858191726466,
-        "Y": 480.579062496018
       },
       {
         "ShowGeometry": false,
@@ -2056,11 +2016,41 @@
         "Excluded": false,
         "X": 3674.163140923376,
         "Y": 953.2874297276154
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ʳʰʸᵗʰᵐ|Collector.ElementsOfTypeInDocument",
+        "Id": "c8b4cdd4198e4752b3394df836b5e186",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1067.74904564617,
+        "Y": 506.28148308138111
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "© ElementTypeByName",
+        "Id": "fc699376d5494a8d9860f924d1d9a7bc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1067.74904564617,
+        "Y": 620.91665066159112
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "1d1a8996b2d44d9896717885475b10e8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1067.74904564617,
+        "Y": 702.77580368586246
       }
     ],
     "Annotations": [],
-    "X": 176.27959730598741,
-    "Y": 288.78837030848194,
-    "Zoom": 0.34905486578202138
+    "X": -277.75645439497976,
+    "Y": -197.78115726079056,
+    "Zoom": 0.581367455957742
   }
 }
