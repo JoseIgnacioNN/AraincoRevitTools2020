@@ -6167,6 +6167,114 @@
       ],
       "Replication": "Auto",
       "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.OpenView@Revit.Elements.Element",
+      "Id": "83b1b865aeed49b79ade5f8ac86dfa97",
+      "Inputs": [
+        {
+          "Id": "e8836815d5514a63bd40728f90fe59ab",
+          "Name": "view",
+          "Description": "View to open.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5dd71cceb6904808bc821a2061a7c6e2",
+          "Name": "View",
+          "Description": "New active view.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Open view in the active document.\n\nDocument.OpenView (view: Element): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[],var[]",
+      "Id": "13cc5bf7ab254b1b8de3c6ee7dce9bac",
+      "Inputs": [
+        {
+          "Id": "eb624966989e40ec976266671e0229d1",
+          "Name": "pass",
+          "Description": "Data to pass.\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "71e960ac980f417b9c8f0b6d614219da",
+          "Name": "waitFor",
+          "Description": "Data object to wait for.\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9be23a3cdac742ac9b9745eac043e7b7",
+          "Name": "pass",
+          "Description": "Passed data.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[], waitFor: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "ab29c542fd364d19912cf47285710f71",
+      "Inputs": [
+        {
+          "Id": "9a3186c8f0e14990a65efc4a3b293d25",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9bdca7b794ce4ecd88ce4ce1d27c97ad",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7105c845c20b45d890b6edb1384f2c96",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
     }
   ],
   "Connectors": [
@@ -6826,6 +6934,11 @@
       "Id": "a84d392ff32e46dc8b0309005a89d25c"
     },
     {
+      "Start": "f29c9b6f678848a4baca3da00493aae5",
+      "End": "eb624966989e40ec976266671e0229d1",
+      "Id": "c3bd052aa686445da1a2159c69604079"
+    },
+    {
       "Start": "3bf97baff00645f4a92ae2580872d86e",
       "End": "b29fce551db3488a86306ac4db380abc",
       "Id": "5706464314fb4c01a54d74de1a284bc8"
@@ -6859,6 +6972,11 @@
       "Start": "6860176596144ffabfd9acfd0abb2ce8",
       "End": "61db4968f455494d99dc7c9e06dad783",
       "Id": "663870977ff749418d1bcbfa6db3d2ad"
+    },
+    {
+      "Start": "e2c68f5e84db4ae08e665e1971129b80",
+      "End": "9a3186c8f0e14990a65efc4a3b293d25",
+      "Id": "d7f4e38ddeef4edf953b53c96ac823d6"
     },
     {
       "Start": "637f58a8419e4abfa34fa49f1f968702",
@@ -7229,6 +7347,16 @@
       "Start": "63c8cda55c5546d985b42dc4d60406e0",
       "End": "4e56855bfc89470aa161a8d08ac405c9",
       "Id": "a2584e7407ab4697bc3b91edb84854d3"
+    },
+    {
+      "Start": "9be23a3cdac742ac9b9745eac043e7b7",
+      "End": "e8836815d5514a63bd40728f90fe59ab",
+      "Id": "ca5b7a76cd2d4cd3bfaa2b0107050db8"
+    },
+    {
+      "Start": "7105c845c20b45d890b6edb1384f2c96",
+      "End": "71e960ac980f417b9c8f0b6d614219da",
+      "Id": "f8c002de68f244ee9c9320ac5f054917"
     }
   ],
   "Dependencies": [
@@ -7257,7 +7385,9 @@
         "db82b66458964944a1ce32cd4834039c",
         "02a6a82e3c18490e9f9a76da8aacc397",
         "e5ed45d32b7746fabe01c2da0551c10d",
-        "7ed227a10a564659b26c4453fa9924e7"
+        "7ed227a10a564659b26c4453fa9924e7",
+        "83b1b865aeed49b79ade5f8ac86dfa97",
+        "13cc5bf7ab254b1b8de3c6ee7dce9bac"
       ]
     },
     {
@@ -9057,6 +9187,36 @@
         "Excluded": false,
         "X": 34722.858940608567,
         "Y": 4030.7158975586312
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.OpenView",
+        "Id": "83b1b865aeed49b79ade5f8ac86dfa97",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 63048.283508090666,
+        "Y": 6244.2635122657757
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "DataStream.Await",
+        "Id": "13cc5bf7ab254b1b8de3c6ee7dce9bac",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 62756.568987099672,
+        "Y": 6244.2635122657757
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Flatten",
+        "Id": "ab29c542fd364d19912cf47285710f71",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 61317.934969819,
+        "Y": 4285.4629194835707
       }
     ],
     "Annotations": [
@@ -9275,8 +9435,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": -17086.932511523002,
-    "Y": -1518.7860353589201,
-    "Zoom": 0.50964457155443033
+    "X": -90678.946552079447,
+    "Y": -6224.4367348013793,
+    "Zoom": 1.4967471890374153
   }
 }

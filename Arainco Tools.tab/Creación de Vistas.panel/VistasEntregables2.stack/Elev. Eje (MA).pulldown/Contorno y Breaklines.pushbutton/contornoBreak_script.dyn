@@ -9953,6 +9953,114 @@
       ],
       "Replication": "Auto",
       "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[], waitFor: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var[],var[]",
+      "Id": "8dab6b6b7dcf4847b85e630375c57481",
+      "Inputs": [
+        {
+          "Id": "dcdaf0ba0b6e46feb59e8df5104935aa",
+          "Name": "pass",
+          "Description": "Data to pass.\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e9ceb43c2b3a4397a4e18d5c984b0098",
+          "Name": "waitFor",
+          "Description": "Data object to wait for.\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e10f60a301074ebf8f251d274026888e",
+          "Name": "pass",
+          "Description": "Passed data.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[], waitFor: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.OpenView@Revit.Elements.Element",
+      "Id": "5a534352388a4625b6dbf1133d7fcbb7",
+      "Inputs": [
+        {
+          "Id": "cf570cc2633647379ded72b46719398e",
+          "Name": "view",
+          "Description": "View to open.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9ad92fa5546c4f8da8d704a5f59f2cc4",
+          "Name": "View",
+          "Description": "New active view.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Open view in the active document.\n\nDocument.OpenView (view: Element): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "5c1e953608844dd78bcf45f049fc3268",
+      "Inputs": [
+        {
+          "Id": "5db8b81be0b24a21b1bf1fa28e0cd668",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e6f24a5c4d29491eb69d48bebc3cd6ee",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2b51709102704ae493baf69f97633917",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
     }
   ],
   "Connectors": [
@@ -11347,6 +11455,11 @@
       "Id": "be4d420922a74ea4b5d2fc318f93a622"
     },
     {
+      "Start": "f3b1dff4ba77494bb3f40b18496f2d4f",
+      "End": "dcdaf0ba0b6e46feb59e8df5104935aa",
+      "Id": "feb6470c82d6480396e1f416d36a4c4b"
+    },
+    {
       "Start": "a48c62b0f2b94b6191a40775209c73ca",
       "End": "16f2e582e3a84a0dbb758f481ef6935b",
       "Id": "27aee930efa5480ab17766dfaa4fd91b"
@@ -11475,6 +11588,11 @@
       "Start": "cc2bc641670e4136952bd34824db1be7",
       "End": "29704c123bbc46ce98e14f070fc7f74c",
       "Id": "17c043185f074fee8371d1cecb32dd99"
+    },
+    {
+      "Start": "be53c3d79a9144cc977e6cb49caebd59",
+      "End": "5db8b81be0b24a21b1bf1fa28e0cd668",
+      "Id": "40301cedae4b47b2a86b0a1824134b46"
     },
     {
       "Start": "b2c76ca99df64ea1bb36cca1bf4b431c",
@@ -11625,6 +11743,16 @@
       "Start": "12aa81822f554edf907b21ba9e751bee",
       "End": "5639f21334ec4de4bd4af6def2aeecac",
       "Id": "37bbbd98585a4a7db2e3ccd9b75238f4"
+    },
+    {
+      "Start": "e10f60a301074ebf8f251d274026888e",
+      "End": "cf570cc2633647379ded72b46719398e",
+      "Id": "0ac6e25160a2463693bdc9864a56b8a9"
+    },
+    {
+      "Start": "2b51709102704ae493baf69f97633917",
+      "End": "e9ceb43c2b3a4397a4e18d5c984b0098",
+      "Id": "79d830e76f644bdb9fd67cc31815e110"
     }
   ],
   "Dependencies": [
@@ -11712,7 +11840,9 @@
         "d7af239a7ee34da38eb81574a7e563a4",
         "8ae2eeb97b164de1bff61a38fe53113f",
         "9f07c6ada1224b11bb70d01224bfd426",
-        "14434589ed6d4a538e1ec7b49f6c8f1a"
+        "14434589ed6d4a538e1ec7b49f6c8f1a",
+        "8dab6b6b7dcf4847b85e630375c57481",
+        "5a534352388a4625b6dbf1133d7fcbb7"
       ]
     },
     {
@@ -14389,6 +14519,36 @@
         "Excluded": false,
         "X": 127652.13952592712,
         "Y": 7573.7693365955838
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "DataStream.Await",
+        "Id": "8dab6b6b7dcf4847b85e630375c57481",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 134102.66620600942,
+        "Y": 8677.94901274275
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.OpenView",
+        "Id": "5a534352388a4625b6dbf1133d7fcbb7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 134333.16339608943,
+        "Y": 8677.94901274275
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Flatten",
+        "Id": "5c1e953608844dd78bcf45f049fc3268",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 133401.18079737798,
+        "Y": 7570.0381585165505
       }
     ],
     "Annotations": [
@@ -14743,10 +14903,61 @@
         "InitialHeight": 663.40215875139984,
         "TextblockHeight": 43.0,
         "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "d310825c768a4befb780f1d3a0d09c9c",
+        "Title": "Marca Vacios",
+        "Nodes": [
+          "410883b199ac4c06b4798f186c36c6b1",
+          "0396ea663f9c43b0ac7e90d87bb45372",
+          "a05d485d742b45bbbe66f6df7c63336c",
+          "331b846c98794492aba38fe87daa71be",
+          "8d2fd70f5711497a98b0bbfee2dbebcb",
+          "ce05d132933a46b791c12d5ffaa6d500",
+          "753d035776c04a149bd24b533b28ca3e",
+          "30b0bb4d5d97492791cfbcdf953c0ab9",
+          "c374c4fe0619440daea80bb0de9a4b9c",
+          "e1a3429f23e847c18c32a6a042bf1804",
+          "a34fb76a59bb41a89deb8db4216f5948",
+          "71115dde8c4841d7a1cf13dff956c1a5",
+          "982b87fe374246239c0017b3b76189ee",
+          "df3a105f34f04b4a8bfa5e711313c3f8",
+          "d2c5631b2bdd487b9ab0c43a9235521f",
+          "7df716af1a484ba1b996be5f083d725f",
+          "27632519142348a58c47a88c2ab21176",
+          "f5df4bc0be774926ba4cdec509e82805",
+          "0eea5f5dad3243f38f7a69a59f06e6fe",
+          "d0e3812c70184c1babd60cbc5e8b7079",
+          "ace199249286443d8480be2137651413",
+          "9b8bd0d4b45046f7a1bfb9e4c7799df0",
+          "4554831e52034c408ec290938e070146",
+          "adcb5776bbcf45968547914f824e1a94",
+          "0edc9773cc124287a92899406e5d793a",
+          "9df08c7b6aed4bcbb985e8e8b3ea4065",
+          "8cb0bcc2ad144208935419e0c71b3c31",
+          "8d764212c91949e985d9502497fd409e",
+          "9d3980c2046f4fca97a941aff9f7dfdb",
+          "861cd7bb00984e7d90e5d81f6aee0000",
+          "aad0549859c2418dab9a3bc00873643c",
+          "ad30491f589748ee816388771c9b44e0",
+          "afccb8fea1b24da9a970e0ff8ca81e03",
+          "02e74f83fed34dd0b39d55ca30f45b0f",
+          "1bb40e3478f4447fae9b6b7bf5babe70",
+          "71f1fea8a14b44489f0a499d5a1e0bca"
+        ],
+        "Left": 128144.39102384556,
+        "Top": 7499.3154600942362,
+        "Width": 5171.9637463930121,
+        "Height": 784.62502764653527,
+        "FontSize": 36.0,
+        "InitialTop": 7552.3154600942362,
+        "InitialHeight": 761.62502764653527,
+        "TextblockHeight": 43.0,
+        "Background": "#FFA4E1FF"
       }
     ],
-    "X": -17139.57325811874,
-    "Y": -463.321406854124,
-    "Zoom": 0.1394727418664212
+    "X": -16036.310338547071,
+    "Y": -540.7941716135374,
+    "Zoom": 0.13175363357610789
   }
 }
