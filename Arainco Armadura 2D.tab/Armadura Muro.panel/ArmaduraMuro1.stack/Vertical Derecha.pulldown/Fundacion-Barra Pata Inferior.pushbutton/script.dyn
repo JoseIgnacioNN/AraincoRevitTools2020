@@ -2,7 +2,7 @@
   "Uuid": "b5cfb46d-68a7-40ff-a5a7-666564b3b0e7",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "Fundacion - Barra Pata Inferior",
+  "Name": "script",
   "ElementResolver": {
     "ResolutionMap": {
       "DSCore.Types": {
@@ -1684,6 +1684,36 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Transaction.Transaction.End@var",
+      "Id": "a742a179d09f4351b2c071dfa4a04352",
+      "Inputs": [
+        {
+          "Id": "66cf6a91c5c54974a8b193c6fedda693",
+          "Name": "input",
+          "Description": "An object.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c0c5493d81741b3aabae28e3c84e51e",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Ends the current Dynamo transaction, returning whatever was passed in.\n\nTransaction.End (input: var): var[]..[]"
     }
   ],
   "Connectors": [
@@ -1894,8 +1924,8 @@
     },
     {
       "Start": "a7eb6f913f4e4e688fc02b29ad7f33b6",
-      "End": "155e373586b747fcb9e5e6c765f53d30",
-      "Id": "2f821a703708448ca2c256511035e59e"
+      "End": "66cf6a91c5c54974a8b193c6fedda693",
+      "Id": "ab8b8a8236a143b382b911e5fdaf4383"
     },
     {
       "Start": "2c3e132eba9347a990941a23730dbec7",
@@ -1986,6 +2016,11 @@
       "Start": "4c301f6845ea4004a47efb483a9fd662",
       "End": "5b9d592bced34d77b418b0bd510ffa59",
       "Id": "12e4337294174873bfec7934cbbe0671"
+    },
+    {
+      "Start": "1c0c5493d81741b3aabae28e3c84e51e",
+      "End": "155e373586b747fcb9e5e6c765f53d30",
+      "Id": "3b8e85e6f5ab418db9f3ca3ba22c56db"
     }
   ],
   "Dependencies": [
@@ -2566,6 +2601,16 @@
         "Excluded": false,
         "X": -967.56565561964612,
         "Y": -413.04037156005904
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Transaction.End",
+        "Id": "a742a179d09f4351b2c071dfa4a04352",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4155.4883079121255,
+        "Y": -505.14314835670342
       }
     ],
     "Annotations": [
@@ -2600,8 +2645,8 @@
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": 711.75660470841706,
-    "Y": 709.326124700382,
-    "Zoom": 0.34185273050138487
+    "X": -3816.7487331544876,
+    "Y": 917.8359313577098,
+    "Zoom": 1.1637016819292052
   }
 }

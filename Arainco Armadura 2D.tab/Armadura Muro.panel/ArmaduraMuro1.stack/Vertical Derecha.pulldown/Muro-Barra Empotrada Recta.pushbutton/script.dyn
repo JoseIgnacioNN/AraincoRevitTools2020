@@ -2,7 +2,7 @@
   "Uuid": "b5cfb46d-68a7-40ff-a5a7-666564b3b0e7",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "Muro - Barra Empotrada Recta",
+  "Name": "script",
   "ElementResolver": {
     "ResolutionMap": {
       "DSCore.Types": {
@@ -2507,6 +2507,36 @@
       ],
       "Replication": "Auto",
       "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Transaction.Transaction.End@var",
+      "Id": "620c9117c4f54758944ecf9ff77f6606",
+      "Inputs": [
+        {
+          "Id": "1ee9099e51bb4702a23f46371e648a2d",
+          "Name": "input",
+          "Description": "An object.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7e3cb86956f141dc91d1f4a9ab904d99",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Ends the current Dynamo transaction, returning whatever was passed in.\n\nTransaction.End (input: var): var[]..[]"
     }
   ],
   "Connectors": [
@@ -2702,8 +2732,8 @@
     },
     {
       "Start": "a7eb6f913f4e4e688fc02b29ad7f33b6",
-      "End": "550f21e5194d421593bf372b192e56c0",
-      "Id": "7d10bf05b6334a44b755ae9a2eb905a5"
+      "End": "1ee9099e51bb4702a23f46371e648a2d",
+      "Id": "99ec486cf36b46e1a4a801aec3887bb0"
     },
     {
       "Start": "2c3e132eba9347a990941a23730dbec7",
@@ -2954,6 +2984,11 @@
       "Start": "559576756f0b41f68c22c13d874e534c",
       "End": "c886d28d19e54a3dabc0b6d2bb762873",
       "Id": "62d22ba3a2f941759508ebcf37b076f6"
+    },
+    {
+      "Start": "7e3cb86956f141dc91d1f4a9ab904d99",
+      "End": "550f21e5194d421593bf372b192e56c0",
+      "Id": "3f8a8bae74024264882536b730491e99"
     }
   ],
   "Dependencies": [
@@ -3798,6 +3833,16 @@
         "Excluded": false,
         "X": 4295.733217251629,
         "Y": 742.36944385009531
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Transaction.End",
+        "Id": "620c9117c4f54758944ecf9ff77f6606",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4699.1391790128082,
+        "Y": -1259.9064657894585
       }
     ],
     "Annotations": [
@@ -3855,8 +3900,8 @@
         "Background": "#FF00FF00"
       }
     ],
-    "X": 815.55811619027475,
-    "Y": 630.50477509684265,
-    "Zoom": 0.24738208204474069
+    "X": 19.745474392563438,
+    "Y": 533.81946245826475,
+    "Zoom": 0.26527150264192845
   }
 }
