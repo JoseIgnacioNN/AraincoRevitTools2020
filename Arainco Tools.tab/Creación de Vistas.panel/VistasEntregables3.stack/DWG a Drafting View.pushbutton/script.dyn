@@ -113,7 +113,7 @@
         {
           "Id": "0185f1edd13441a8967351aba9cc969a",
           "Name": "LabelWidth_optional",
-          "Description": "int\nDefault value : 120",
+          "Description": "int\nDefault value : 140",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -190,7 +190,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Selección entre True y False"
+      "Description": "Selection between a true and false."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -401,7 +401,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Crea un objeto de directorio a partir de una ruta"
+      "Description": "Creates a directory object from a path"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -451,7 +451,7 @@
         {
           "Id": "b1d56df64a9849e3bf3d4f55a4d096e2",
           "Name": "Values_",
-          "Description": "var[]",
+          "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -745,7 +745,7 @@
         {
           "Id": "296440633a78453f9b535815c7fe07f7",
           "Name": "LabelWidth_optional",
-          "Description": "int\nDefault value : 120",
+          "Description": "int\nDefault value : 140",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1802,7 +1802,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "5c7235c7275c418494bfe62a7f13b487",
+          "Id": "07bce9326cd4488daf2ee17049139928",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1817,12 +1817,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "[\n\"Planos Generales - PG\",\n\"Elevaciones Eje - MA\",\n\"Plantas Losa - LO\",\n\"Elevacion Viga - VH\",\n\"Elevacion Columna - CH\"\n];",
+      "Code": "[\n\"Planos Generales - PG\",\n\"Elevaciones Eje - MA\",\n\"Plantas Losa - LO\",\n\"Elevacion Viga - VH\",\n\"Elevacion Columna - CH\",\n\"Estructura Metalica - EM\",\n\"Detalle Escalera - ES\",\n\"Detalle Estanque - DE\"\n];",
       "Id": "4a25cc7119f84ce79fc1900d76aa48a0",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "2f83327ab6aa441e9f1c48c865de9332",
+          "Id": "c14b5e6553fa471481d7fc97d0f64767",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1837,12 +1837,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "[\n\"00_PG\",\n\"01_LO\",\n\"03_MA\",\n\"04_VH\",\n\"05_CH\"\n];",
+      "Code": "[\n\"00_PG\",\n\"01_LO\",\n\"03_MA\",\n\"04_VH\",\n\"05_CH\",\n\"06_EM\",\n\"07_ES\",\n\"08_DE\"\n];",
       "Id": "b09900e87e02459692c437379fa99052",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "bc981a25802742d4bb97b1206aff11fa",
+          "Id": "bf7f43cb4fc74c8ea773f36d95c9ec92",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -2290,7 +2290,7 @@
     },
     {
       "ConcreteType": "DSRevitNodesUI.ElementTypes, DSRevitNodesUI",
-      "SelectedIndex": 326,
+      "SelectedIndex": 332,
       "SelectedString": "TextNoteType",
       "NodeType": "ExtensionNode",
       "Id": "8b070b72e60841abb072e2c1e8a0f39e",
@@ -2664,13 +2664,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var[],var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
       "Id": "dab067061f11478c9024a1ec0e5a9037",
       "Inputs": [
         {
           "Id": "ecb8d07ea7ae4168a1b0738a222c47d1",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar[]",
+          "Description": "Data to pass.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2679,7 +2679,7 @@
         {
           "Id": "33e1a8b6c8c94c2fa0afb2bf47129b0c",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2698,7 +2698,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[], waitFor: var[]): var[]..[]"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace:\nOrchid.Common"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2769,6 +2769,26 @@
           "Id": "df3d0cb7890f4d66be237e94b3e474eb",
           "Name": "",
           "Description": "res2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "300;",
+      "Id": "5ad0d6da0d6047c9b75fb9b11a4061db",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "71ab9376d0e041adb7422750352d3f45",
+          "Name": "",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3086,19 +3106,19 @@
       "Id": "eb3ac7acd20e433093c9454e5947581a"
     },
     {
-      "Start": "5c7235c7275c418494bfe62a7f13b487",
+      "Start": "07bce9326cd4488daf2ee17049139928",
       "End": "9450f3fba6d040d4a51f86d5c49304c1",
       "Id": "ab61bec348414362926cd1c41e30b4ff"
     },
     {
-      "Start": "2f83327ab6aa441e9f1c48c865de9332",
+      "Start": "c14b5e6553fa471481d7fc97d0f64767",
       "End": "0bcc3a8591a947e99d6aadee9eb4c238",
-      "Id": "3834c11ae74d4f66aca77526c5332a5c"
+      "Id": "086cc25f91694ac0aa0e0a653e1225bf"
     },
     {
-      "Start": "bc981a25802742d4bb97b1206aff11fa",
+      "Start": "bf7f43cb4fc74c8ea773f36d95c9ec92",
       "End": "17301040ac844bbf95e6dc64b82dcd8b",
-      "Id": "af1b74ea95124427bea25bb525f508b7"
+      "Id": "3bd2a17e7ed14d0b8a0ae7ac669c7260"
     },
     {
       "Start": "966b6ffc0740445aa04108240eecc0ab",
@@ -3224,6 +3244,11 @@
       "Start": "df3d0cb7890f4d66be237e94b3e474eb",
       "End": "3c67fcc879334f4588390c9a1c4a7e3c",
       "Id": "dd1b5903f7934d11a4294a1c1de7c93f"
+    },
+    {
+      "Start": "71ab9376d0e041adb7422750352d3f45",
+      "End": "9b9a5a8d94ff4b32b6642569222db466",
+      "Id": "f497edd2ae794434ab8b7cfb82e36e26"
     }
   ],
   "Dependencies": [
@@ -3304,7 +3329,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.3.2.15696",
+      "Version": "2.6.2.15705",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -3418,8 +3443,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2954.0369913111326,
-        "Y": 378.65040839750696
+        "X": 2954.03699131113,
+        "Y": 378.650408397507
       },
       {
         "ShowGeometry": true,
@@ -3748,8 +3773,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2932.8965218901135,
-        "Y": 915.58889502517513
+        "X": 2861.8955609474983,
+        "Y": 915.588895025175
       },
       {
         "ShowGeometry": true,
@@ -3758,8 +3783,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2891.8965218901135,
-        "Y": 1000.6223832073072
+        "X": 2795.8955609474983,
+        "Y": 1000.62238320731
       },
       {
         "ShowGeometry": true,
@@ -3768,8 +3793,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3023.8965218901135,
-        "Y": 1181.0001038983912
+        "X": 2952.8955609474983,
+        "Y": 1233.87315991949
       },
       {
         "ShowGeometry": true,
@@ -4010,11 +4035,21 @@
         "Excluded": false,
         "X": 4339.70297086645,
         "Y": 1036.04437819196
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "5ad0d6da0d6047c9b75fb9b11a4061db",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2954.03699131113,
+        "Y": 697.413160305233
       }
     ],
     "Annotations": [],
-    "X": -418.05680728298739,
-    "Y": 380.83752271970553,
-    "Zoom": 0.25698005874803531
+    "X": 23.17859276429904,
+    "Y": 499.83245906736079,
+    "Zoom": 0.21561616852743976
   }
 }
