@@ -1,0 +1,457 @@
+{
+  "Uuid": "b6b55171-c67e-40fe-abaf-f51bbb48f52d",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "script",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.SelectFaces, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "52ec0dcb-c698-492a-95e2-c4d77c98c57d-00480007:1:SURFACE"
+      ],
+      "Id": "e21905b3b658497eb9cf0ee2e931b5c3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "79330e1ee7ae4b46bda1b5114762cdf4",
+          "Name": "Surfaces",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.Area",
+      "Id": "b1291c710bda44ad8f934cfe3529f686",
+      "Inputs": [
+        {
+          "Id": "0d0cbc13adc74876bfa6858849cd1b36",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e261792b6054b509baac9e2682a71ec",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the total surface area.\n\nSurface.Area: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Math.Ceiling@double",
+      "Id": "dafcab6a78164091ac777db385778c59",
+      "Inputs": [
+        {
+          "Id": "183dd3adc6e046f99e5f1c33b7d20503",
+          "Name": "number",
+          "Description": "Number to round up.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5d2f747540e43538877cc8db614ea7f",
+          "Name": "integer",
+          "Description": "First integer greater than the number.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the first integer greater than the number\n\nMath.Ceiling (number: double): int"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.DynamoConvert, CoreNodeModels",
+      "NodeType": "ConvertBetweenUnitsNode",
+      "MeasurementType": "Area",
+      "FromConversion": "SquareMillimeter",
+      "ToConversion": "SquareMeter",
+      "Id": "783349eaf9d042da8a36f79917946b0a",
+      "Inputs": [
+        {
+          "Id": "0221ada00d694dc39cea512611b21bec",
+          "Name": "",
+          "Description": "A numeric value for conversion.",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ea7402b3720c438fbec523acab87727b",
+          "Name": "",
+          "Description": "A converted numeric value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Convert between units of measure."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Rhythm.Revit.Helpers.Helpers.SimpleUserMessage@string,string",
+      "Id": "684f3ab0b6ba498199e37f7806a0dfdc",
+      "Inputs": [
+        {
+          "Id": "33a83e28b2c04fb8b9e1a8c6e76efc8f",
+          "Name": "caption",
+          "Description": "The caption for the window title.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7bda59ab273644bf85e4fbdcd50c8234",
+          "Name": "message",
+          "Description": "The message to give the user.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bd40862ea06940e9974e0eb59fd5abc1",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This provides a simple user message.\n\nHelpers.SimpleUserMessage (caption: string, message: string): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Area de la Cara\";",
+      "Id": "7f2e74fbfa1843b5b52d4fe3c3ec4a4f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "51eda0caee9b4e1497d886062c0283db",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a+\" m²\";",
+      "Id": "e05e0bd3a0d14f1792dc4209fb0edd2e",
+      "Inputs": [
+        {
+          "Id": "d286f86fbab848d29f423c018b4c28eb",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fa82671e0a4d4fa9af3fd277c9331b34",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "4fe1c647-1de0-4d97-a1b1-d1ab28448190",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "cf6ec36652a84ab9bf301ca0e0a11915",
+      "Inputs": [
+        {
+          "Id": "17b820894be247b884d0f8817c4231f4",
+          "Name": "numbers",
+          "Description": "Data for conversion.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "daf2fd28db514ca0b48d2a7b5470f7a7",
+          "Name": "digits",
+          "Description": "Rounding digits.\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d4953e1450c240f6ae66d758d647d076",
+          "Name": "str",
+          "Description": "Data returned as strings.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Given a list of numbers with decimal places, round them to a specific length and convert that to a string. More reliable than String.ToObject."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "3;",
+      "Id": "fac14feee5b443158b3d900d1808d9ce",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9f2b2746f36c46f68d0355dd4406cabb",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "79330e1ee7ae4b46bda1b5114762cdf4",
+      "End": "0d0cbc13adc74876bfa6858849cd1b36",
+      "Id": "8cd7d119cb6240c19466f50ee849898b"
+    },
+    {
+      "Start": "2e261792b6054b509baac9e2682a71ec",
+      "End": "183dd3adc6e046f99e5f1c33b7d20503",
+      "Id": "cffcb5440d8e4bb58116558a5410244b"
+    },
+    {
+      "Start": "f5d2f747540e43538877cc8db614ea7f",
+      "End": "0221ada00d694dc39cea512611b21bec",
+      "Id": "3c17f50c4f0c48daa70f0cbb7243aafe"
+    },
+    {
+      "Start": "ea7402b3720c438fbec523acab87727b",
+      "End": "17b820894be247b884d0f8817c4231f4",
+      "Id": "be66e3f45c4e4a9da31c6721b4a88895"
+    },
+    {
+      "Start": "51eda0caee9b4e1497d886062c0283db",
+      "End": "33a83e28b2c04fb8b9e1a8c6e76efc8f",
+      "Id": "27c3461d0d1440d59d1d3d0340ec1571"
+    },
+    {
+      "Start": "fa82671e0a4d4fa9af3fd277c9331b34",
+      "End": "7bda59ab273644bf85e4fbdcd50c8234",
+      "Id": "7c8728c06ef54daea4774123543fea45"
+    },
+    {
+      "Start": "d4953e1450c240f6ae66d758d647d076",
+      "End": "d286f86fbab848d29f423c018b4c28eb",
+      "Id": "cf4c92d4a05b4a6386c3c811ede1705b"
+    },
+    {
+      "Start": "9f2b2746f36c46f68d0355dd4406cabb",
+      "End": "daf2fd28db514ca0b48d2a7b5470f7a7",
+      "Id": "c07c7785a9bb4345ade15d942c56c8c2"
+    }
+  ],
+  "Dependencies": [
+    "4fe1c647-1de0-4d97-a1b1-d1ab28448190"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Rhythm",
+      "Version": "2020.7.25",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "684f3ab0b6ba498199e37f7806a0dfdc"
+      ]
+    },
+    {
+      "Name": "Crumple",
+      "Version": "2022.2.13",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "cf6ec36652a84ab9bf301ca0e0a11915"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.2.15696",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Faces",
+        "Id": "e21905b3b658497eb9cf0ee2e931b5c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 732.0,
+        "Y": 505.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Surface.Area",
+        "Id": "b1291c710bda44ad8f934cfe3529f686",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1040.4760225341779,
+        "Y": 505.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Math.Ceiling",
+        "Id": "dafcab6a78164091ac777db385778c59",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1392.9520450683558,
+        "Y": 505.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Convert Between Units",
+        "Id": "783349eaf9d042da8a36f79917946b0a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1750.4280676025337,
+        "Y": 505.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ʳʰʸᵗʰᵐ|Helpers.SimpleUserMessage",
+        "Id": "684f3ab0b6ba498199e37f7806a0dfdc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2658.4098009499253,
+        "Y": 403.50852872078542
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "7f2e74fbfa1843b5b52d4fe3c3ec4a4f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2437.6031757664105,
+        "Y": 330.6114354301011
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e05e0bd3a0d14f1792dc4209fb0edd2e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2500.6031757664105,
+        "Y": 509.42366230143466
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "© RoundToString",
+        "Id": "cf6ec36652a84ab9bf301ca0e0a11915",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2219.8855393547346,
+        "Y": 505.49770560062581
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "fac14feee5b443158b3d900d1808d9ce",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2219.8855393547346,
+        "Y": 611.68848110866088
+      }
+    ],
+    "Annotations": [],
+    "X": -717.19971907095521,
+    "Y": 122.7569596954358,
+    "Zoom": 1.0207646435395563
+  }
+}
