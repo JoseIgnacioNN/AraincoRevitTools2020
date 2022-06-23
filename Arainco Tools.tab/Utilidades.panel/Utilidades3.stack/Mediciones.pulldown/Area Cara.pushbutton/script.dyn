@@ -10,27 +10,6 @@
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "Dynamo.Nodes.SelectFaces, DSRevitNodesUI",
-      "NodeType": "ExtensionNode",
-      "InstanceId": [
-        "52ec0dcb-c698-492a-95e2-c4d77c98c57d-00480007:1:SURFACE"
-      ],
-      "Id": "e21905b3b658497eb9cf0ee2e931b5c3",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "79330e1ee7ae4b46bda1b5114762cdf4",
-          "Name": "Surfaces",
-          "Description": "The selected elements.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
       "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.Area",
@@ -270,14 +249,28 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSFaceSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [],
+      "Id": "77529891c1d343bf9c250028afa298f2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "79d9ff1a18994fffab7f86d18542ea67",
+          "Name": "Surface",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
     }
   ],
   "Connectors": [
-    {
-      "Start": "79330e1ee7ae4b46bda1b5114762cdf4",
-      "End": "0d0cbc13adc74876bfa6858849cd1b36",
-      "Id": "8cd7d119cb6240c19466f50ee849898b"
-    },
     {
       "Start": "2e261792b6054b509baac9e2682a71ec",
       "End": "183dd3adc6e046f99e5f1c33b7d20503",
@@ -312,6 +305,11 @@
       "Start": "9f2b2746f36c46f68d0355dd4406cabb",
       "End": "daf2fd28db514ca0b48d2a7b5470f7a7",
       "Id": "c07c7785a9bb4345ade15d942c56c8c2"
+    },
+    {
+      "Start": "79d9ff1a18994fffab7f86d18542ea67",
+      "End": "0d0cbc13adc74876bfa6858849cd1b36",
+      "Id": "5c91098734c649c5ac3156706c665d0d"
     }
   ],
   "Dependencies": [
@@ -339,10 +337,10 @@
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
-      "HasRunWithoutCrash": true,
+      "HasRunWithoutCrash": false,
       "IsVisibleInDynamoLibrary": true,
       "Version": "2.3.2.15696",
-      "RunType": "Automatic",
+      "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
@@ -358,16 +356,6 @@
       "UpZ": 0.0
     },
     "NodeViews": [
-      {
-        "ShowGeometry": true,
-        "Name": "Select Faces",
-        "Id": "e21905b3b658497eb9cf0ee2e931b5c3",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 732.0,
-        "Y": 505.5
-      },
       {
         "ShowGeometry": true,
         "Name": "Surface.Area",
@@ -447,11 +435,21 @@
         "Excluded": false,
         "X": 2219.8855393547346,
         "Y": 611.68848110866088
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Face",
+        "Id": "77529891c1d343bf9c250028afa298f2",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 720.20665248040484,
+        "Y": 326.91650346591848
       }
     ],
     "Annotations": [],
-    "X": -717.19971907095521,
-    "Y": 122.7569596954358,
+    "X": -119.19971907095521,
+    "Y": 114.7569596954358,
     "Zoom": 1.0207646435395563
   }
 }
