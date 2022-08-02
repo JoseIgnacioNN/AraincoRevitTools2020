@@ -857,55 +857,6 @@
       "Description": "Allows for DesignScript code to be authored directly"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "96354ad8-1c33-42e8-ad2d-025c19be5a9d",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "a7decbfbad684351a5edc53ae6ae3bd5",
-      "Inputs": [
-        {
-          "Id": "7bb869591dfe425da984e686ebe84d9f",
-          "Name": "InputName",
-          "Description": "string\nDefault value : \"\"",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a1f9bb597b034e6bbe8283d831f9ede1",
-          "Name": "ButtonText",
-          "Description": "string\nDefault value : \"Select Model Element(s)\"",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "5a634bd458214b4db5ae5341a6d45c32",
-          "Name": "CategoryFilter",
-          "Description": "var[]\nDefault value : \"\"",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "8f9b7ecff8514dd0b9bd016f17416b40",
-          "Name": "SelectOrderedModelElements input",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Creates a Revit element selection input for UI.MultipleInputForm++ . Check out www.data-shapes.net for more infos!"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
       "Code": "\"SELECCIONAR\";",
@@ -4131,6 +4082,64 @@
       ],
       "Replication": "Auto",
       "Description": "Ends the current Dynamo transaction, returning whatever was passed in.\n\nTransaction.End (input: var): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "7804e3b4-a95a-4ca5-a391-fd9d10566b40",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "ad7896cd94a64ff9a89268d173433ff6",
+      "Inputs": [
+        {
+          "Id": "11852db7d6284db597ed15056aac6ba4",
+          "Name": "InputName",
+          "Description": "string\nDefault value : \"\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4d219cafe6164b809c62fdb326d3e5e2",
+          "Name": "ButtonText",
+          "Description": "string\nDefault value : \"Select Model Element(s)\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1ef980b3acb842a08ce068d5525f5730",
+          "Name": "CategoryFilter",
+          "Description": "var[]\nDefault value : \"\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6518b9e383bf410ca2ccba0f8f06a932",
+          "Name": "SelectSingleElement",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "92b963e7ed0d462dac0e06af599e606e",
+          "Name": "SelectModelElements input",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Revit element selection input for UI.MultipleInputForm++ . Check out www.data-shapes.net for more infos!"
     }
   ],
   "Connectors": [
@@ -4275,14 +4284,9 @@
       "Id": "00cf0cf1989e4f56ac52ace8e0e33b39"
     },
     {
-      "Start": "8f9b7ecff8514dd0b9bd016f17416b40",
-      "End": "131db741761941a381403c5779798b0c",
-      "Id": "c0843742194b4b56a4ae6be63854064a"
-    },
-    {
       "Start": "b3f04d7f954a482693b878811deba74e",
-      "End": "a1f9bb597b034e6bbe8283d831f9ede1",
-      "Id": "c4ec5545f04e466ea1c7074a925e17eb"
+      "End": "4d219cafe6164b809c62fdb326d3e5e2",
+      "Id": "10279030a2204ff38fa1797c79d33483"
     },
     {
       "Start": "24287dc73c4743f784a8dad90e5230ba",
@@ -4291,13 +4295,13 @@
     },
     {
       "Start": "032e899e3f424a82be96a8f3d9aaf02e",
-      "End": "5a634bd458214b4db5ae5341a6d45c32",
-      "Id": "4ec0a7d9b24e491e9c3ac0b354e6e173"
+      "End": "1ef980b3acb842a08ce068d5525f5730",
+      "Id": "d602b2650e6145feb608df701c369177"
     },
     {
       "Start": "2acfce9f20e044b7964a7f8eb9b6f4ea",
-      "End": "7bb869591dfe425da984e686ebe84d9f",
-      "Id": "43850e0687234a0b8f1343fb46a46867"
+      "End": "11852db7d6284db597ed15056aac6ba4",
+      "Id": "82c55da9ce8b403695c4a7326b78ce2f"
     },
     {
       "Start": "5c181d9dcdb641c98943632ff94f1f48",
@@ -4823,20 +4827,25 @@
       "Start": "13c319ac0b364350874533ee36fb955c",
       "End": "e9dcbb4eb23547eab4eed536484899b9",
       "Id": "28a46ce68c5e4ca9b0e6ec54e5e8776c"
+    },
+    {
+      "Start": "92b963e7ed0d462dac0e06af599e606e",
+      "End": "131db741761941a381403c5779798b0c",
+      "Id": "18a16cb5eac54910979cfcf73c3d9194"
     }
   ],
   "Dependencies": [
     "0b59c4d8-afe4-4063-bf7e-2195fa33e8a9",
     "85cb9075-0c9b-4c2f-a8b7-61d16e1ccc7f",
     "9fbd05c0-ec1f-4bd3-bf37-969a1552eab8",
-    "96354ad8-1c33-42e8-ad2d-025c19be5a9d",
     "b409775c-5d88-4d47-96a3-5135c775d26a",
     "0dd4bbc7-3594-4c4f-8e7d-760421e4bc9b",
     "7debf647-afa8-476e-81ad-a74417bda812",
     "8543a5f0-8d75-43d3-88b3-aebd95b1ada4",
     "51e3d5bc-cc07-4e8b-b976-11dc51cf6843",
     "c1c01465-8e50-416b-909a-d9902aa0780b",
-    "8308a06b-d5d3-4435-88d1-8149c9cb9c46"
+    "8308a06b-d5d3-4435-88d1-8149c9cb9c46",
+    "7804e3b4-a95a-4ca5-a391-fd9d10566b40"
   ],
   "NodeLibraryDependencies": [
     {
@@ -4872,11 +4881,11 @@
       "Nodes": [
         "ed4797f8dd1d4273affb738de93b10e6",
         "743f5f878b2147168e6968986a4b8602",
-        "a7decbfbad684351a5edc53ae6ae3bd5",
         "2c549df130f94717aa692da62dece830",
         "68763ef772ab4bee81941448283180a5",
         "97b629c4871a4bf8b2643cb9d61e8e3c",
-        "a154affc10be4bdb9226a69a068174c4"
+        "a154affc10be4bdb9226a69a068174c4",
+        "ad7896cd94a64ff9a89268d173433ff6"
       ]
     },
     {
@@ -5111,16 +5120,6 @@
         "Excluded": false,
         "X": -8577.8845688169458,
         "Y": -6625.8203056539878
-      },
-      {
-        "Id": "a7decbfbad684351a5edc53ae6ae3bd5",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Name": "SelectModelElements Data (ordered)",
-        "ShowGeometry": true,
-        "Excluded": false,
-        "X": -12043.393425565999,
-        "Y": -6929.7502693343322
       },
       {
         "Id": "4d6711a8da4b4e969ba043ab23c1a8f8",
@@ -6091,11 +6090,21 @@
         "Excluded": false,
         "X": 6082.8432992134994,
         "Y": -6605.73189617044
+      },
+      {
+        "Id": "ad7896cd94a64ff9a89268d173433ff6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SelectModelElements Data",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -12040.711339338082,
+        "Y": -7125.5667651717913
       }
     ],
     "Annotations": [],
-    "X": 348.80735569049716,
-    "Y": 1111.275405140286,
-    "Zoom": 0.0585316514802944
+    "X": 13674.601602233219,
+    "Y": 7733.8193796197793,
+    "Zoom": 1.0738813768278104
   }
 }
