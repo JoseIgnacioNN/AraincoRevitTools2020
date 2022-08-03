@@ -756,12 +756,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "[\n\"EST_M_STRUCTURAL FRAMING_VIGA LAMINADA_L\",\n\"EST_M_STRUCTURAL FRAMING_VIGA OHM\",\n\"EST_M_STRUCTURAL FRAMING_VIGA PLEGADA_C\",\n\"EST_M_STRUCTURAL FRAMING_VIGA PLEGADA_CA\",\n\"EST_M_STRUCTURAL FRAMING_VIGA PLEGADA_HSS\",\n\"EST_M_STRUCTURAL FRAMING_VIGA PLEGADA_HSSE\",\n\"EST_M_STRUCTURAL FRAMING_VIGA PLEGADA_L\",\n\"EST_M_STRUCTURAL FRAMING_VIGA SOLDADA_HN\",\n\"EST_M_STRUCTURAL FRAMING_VIGA SOLDADA_IN\",\n\"EST_M_STRUCTURAL FRAMING_VIGA SOLDADA_T\"\n];",
+      "Code": "[\n\"EST_M_STRUCTURAL FRAMING_VIGA TRADICIONAL\",\n\"EST_M_STRUCTURAL FRAMING_VIGA INVERTIDA\",\n\"EST_M_STRUCTURAL FRAMING_VIGA SEMI INVERTIDA\"\n];",
       "Id": "9f744b0067f04f78888da8dff248995f",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "17c0203a84ec4022941ee062353e01d7",
+          "Id": "d8eb86257aa345b3a6902bf8b4e96052",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -12903,6 +12903,36 @@
       ],
       "Replication": "Auto",
       "Description": "x doesn't equal y.\n\n!= (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.List.AnyTrue@bool[]",
+      "Id": "23ead558253e4e14b3ec586229625486",
+      "Inputs": [
+        {
+          "Id": "f8973477e9a04e7391ba2f84848d2547",
+          "Name": "list",
+          "Description": "List to be checked whether any items are true!?\n\nbool[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9295a4c14d924fd8bfcf50e1bc9d70b9",
+          "Name": "boolean",
+          "Description": "Whether any items are true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Determines if any items in the given list has a true value.\n\nList.AnyTrue (list: bool[]): bool"
     }
   ],
   "Connectors": [
@@ -13032,14 +13062,14 @@
       "Id": "94a135ce82dd4cd7b3a2c2011b06db74"
     },
     {
-      "Start": "17c0203a84ec4022941ee062353e01d7",
+      "Start": "d8eb86257aa345b3a6902bf8b4e96052",
       "End": "e39b952c307c4f6c8f78896b8721189c",
-      "Id": "97ac6325f3a64b2a9830ba84d027c1ca"
+      "Id": "f2988b0d049b43b9af46a0d386fdab70"
     },
     {
       "Start": "14966236427a46ac8f73c05e5ad13f58",
-      "End": "84f988ffca6141a88417f4c8cbb9eaa4",
-      "Id": "9cacb593c18547508930e0d47b7e6843"
+      "End": "f8973477e9a04e7391ba2f84848d2547",
+      "Id": "835c97c1175847be8da620cdca6019de"
     },
     {
       "Start": "02316fc76f25470388b66a9bfdb92818",
@@ -15055,6 +15085,11 @@
       "Start": "1adf25b462004b2bbe9e310f0b1112ff",
       "End": "e524193a0bba4c15bd6567a44fab20f7",
       "Id": "e0f9c375804c45a7acb0e9db4f7e7941"
+    },
+    {
+      "Start": "9295a4c14d924fd8bfcf50e1bc9d70b9",
+      "End": "84f988ffca6141a88417f4c8cbb9eaa4",
+      "Id": "29bec4d09ee54e3a92b111a7ac7c788d"
     }
   ],
   "Dependencies": [
@@ -15106,7 +15141,8 @@
         "bf7575fbf37049c2832c306118ceced8",
         "bb451ea9bbcc48c6b36fadb15c44dab4",
         "b621b54e7b3f46c498ee30cb8d607471",
-        "118216fb0f524d379aa33ee3133079e1"
+        "118216fb0f524d379aa33ee3133079e1",
+        "23ead558253e4e14b3ec586229625486"
       ]
     },
     {
@@ -15227,8 +15263,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2945.9278084480211,
-        "Y": 2416.21470836692
+        "X": 2714.7624999789532,
+        "Y": 2420.2560599135822
       },
       {
         "ShowGeometry": true,
@@ -15237,8 +15273,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2746.6033436263606,
-        "Y": 2445.95222163737
+        "X": 2515.4380351572927,
+        "Y": 2449.9935731840319
       },
       {
         "ShowGeometry": false,
@@ -15247,8 +15283,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2945.9278084480211,
-        "Y": 2525.18460243848
+        "X": 2714.7624999789532,
+        "Y": 2529.225953985142
       },
       {
         "ShowGeometry": false,
@@ -15257,8 +15293,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2945.9278084480211,
-        "Y": 2608.27906442852
+        "X": 2714.7624999789532,
+        "Y": 2612.3204159751822
       },
       {
         "ShowGeometry": false,
@@ -15417,8 +15453,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3421.0587551013014,
-        "Y": 2476.79208989837
+        "X": 3189.8934466322335,
+        "Y": 2480.8334414450319
       },
       {
         "ShowGeometry": false,
@@ -15427,8 +15463,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3248.0587551013014,
-        "Y": 2561.35620585745
+        "X": 3016.8934466322335,
+        "Y": 2565.3975574041119
       },
       {
         "ShowGeometry": false,
@@ -15437,8 +15473,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3649.9738294431718,
-        "Y": 2476.79208989837
+        "X": 3418.8085209741039,
+        "Y": 2480.8334414450319
       },
       {
         "ShowGeometry": false,
@@ -18929,6 +18965,16 @@
         "Excluded": false,
         "X": 3754.7447772018895,
         "Y": -5122.1617905244129
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.AnyTrue",
+        "Id": "23ead558253e4e14b3ec586229625486",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3597.7190356194178,
+        "Y": 2480.8334414450319
       }
     ],
     "Annotations": [
@@ -19000,11 +19046,12 @@
           "5f2dcf1c21b64433b51e222891c55065",
           "f0d832cb7da6456db5242d2232002f69",
           "a30ccd1e015047cbbde4bbfa6e39ff67",
-          "c315e88c93274af595a7250af28c1d78"
+          "c315e88c93274af595a7250af28c1d78",
+          "23ead558253e4e14b3ec586229625486"
         ],
-        "Left": 2736.6033436263606,
+        "Left": 2505.4380351572927,
         "Top": 2100.49387634819,
-        "Width": 8277.6798060741785,
+        "Width": 8508.8451145432464,
         "Height": 1351.4923198731599,
         "FontSize": 36.0,
         "InitialTop": 2153.49387634819,
@@ -19403,8 +19450,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": -671.2782877712184,
-    "Y": -655.753319694521,
-    "Zoom": 0.34529853502296692
+    "X": -959.56256654686672,
+    "Y": -247.69917715252348,
+    "Zoom": 0.39352362566277288
   }
 }
