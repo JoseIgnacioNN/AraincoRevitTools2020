@@ -96,7 +96,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element\n\nNamespace:\nOrchid.RevitProject.Common"
     },
     {
       "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
@@ -284,7 +284,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get crop box.\n\nView.GetCropBox (view: Element): var[]..[]"
+      "Description": "Get crop box.\n\nView.GetCropBox (view: Element): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Views"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -512,7 +512,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get all dimension type in document.\n\nDimensionType.All (condense: bool = true): var[]..[]"
+      "Description": "Get all dimension type in document.\n\nDimensionType.All (condense: bool = true): var[]..[]\n\nNamespace:\nOrchid.RevitProject.Annotations"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -553,7 +553,7 @@
         {
           "Id": "1f8140c0269f45c1b02aaa8dad9e7a32",
           "Name": "x",
-          "Description": "x value.\n\nvar[]..[]",
+          "Description": "Basic type object to compare (e.g. bool, int, double, string, etc.)\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -562,7 +562,7 @@
         {
           "Id": "cbf9329ef42e4f41ad2cd68a2d5ddfbc",
           "Name": "y",
-          "Description": "y value.\n\nvar[]..[]",
+          "Description": "Basic type object to compare (e.g. bool, int, double, string, etc.)\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -572,8 +572,8 @@
       "Outputs": [
         {
           "Id": "8b5d72c93fa54791bb14f4db527d31b4",
-          "Name": "var[]..[]",
-          "Description": "var[]..[]",
+          "Name": "bool",
+          "Description": "Result of equality check",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -581,7 +581,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Equal x to y?\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+      "Description": "Compares if x and y are equal\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -889,13 +889,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.DataStream.Await@var[],var[]",
+      "FunctionSignature": "Orchid.Common.DataStream.Await@var,var[]..[]",
       "Id": "94db4d5ce8a749408b9aba350efc8405",
       "Inputs": [
         {
           "Id": "e5b78e5dd75d43428617a8c352b26105",
           "Name": "pass",
-          "Description": "Data to pass.\n\nvar[]",
+          "Description": "Data to pass.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -904,7 +904,7 @@
         {
           "Id": "f16534ca47274ebe84c8ae98687e66e0",
           "Name": "waitFor",
-          "Description": "Data object to wait for.\n\nvar[]",
+          "Description": "Data object to wait for.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -923,7 +923,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var[], waitFor: var[]): var[]..[]"
+      "Description": "Await a data stream before passing another data stream.\n\nDataStream.Await (pass: var, waitFor: var[]..[]): var[]..[]\n\nNamespace:\nOrchid.Common"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -953,7 +953,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Open view in the active document.\n\nDocument.OpenView (view: Element): Element"
+      "Description": "Open view in the active document.\n\nDocument.OpenView (view: Element): Element\n\nNamespace:\nOrchid.RevitProject.Common"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -972,8 +972,8 @@
         },
         {
           "Id": "2cc82639d2e44032a0e3bad39b87fdc3",
-          "Name": "amt",
-          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "Name": "amount",
+          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -983,8 +983,8 @@
       "Outputs": [
         {
           "Id": "145ab4e55035469884fb55c7a27b7233",
-          "Name": "var[]..[]",
-          "Description": "var[]..[]",
+          "Name": "list",
+          "Description": "Flattened list by amount",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -992,7 +992,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
     }
   ],
   "Connectors": [
@@ -1195,13 +1195,36 @@
       ]
     }
   ],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.3.2.15696",
+      "Version": "2.12.1.8246",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -1530,7 +1553,7 @@
         ],
         "Left": 675.6827340246673,
         "Top": 5610.85904785918,
-        "Width": 3046.4227686067229,
+        "Width": 3039.4227686067229,
         "Height": 1266.5558547692426,
         "FontSize": 36.0,
         "InitialTop": 5663.85904785918,
