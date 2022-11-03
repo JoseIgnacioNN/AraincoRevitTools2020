@@ -42,7 +42,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element\n\nNamespace:\nOrchid.RevitProject.Common"
     },
     {
       "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
@@ -230,8 +230,8 @@
       "Inputs": [
         {
           "Id": "fd063b4e49f9488fa4356553050a5d52",
-          "Name": "str",
-          "Description": "String to search in.\n\nstring",
+          "Name": "string",
+          "Description": "String to search in\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -240,7 +240,7 @@
         {
           "Id": "748be7c43ee34984b8ad8d4f9720aca4",
           "Name": "searchFor",
-          "Description": "Substring to search for.\n\nstring",
+          "Description": "Substring to search for\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -249,7 +249,7 @@
         {
           "Id": "375b25eef9b648dba3fd14ff065c96f3",
           "Name": "ignoreCase",
-          "Description": "Whether or not comparison takes case into account.\n\nbool\nDefault value : false",
+          "Description": "Whether or not comparison takes case into account\n\nbool\nDefault value : false",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -260,7 +260,7 @@
         {
           "Id": "494be77ae67649bcbc79ebbb2c59bd17",
           "Name": "bool",
-          "Description": "Whether the string contains the substring.",
+          "Description": "Whether the string contains the substring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -268,7 +268,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Determines if the given string contains the given substring.\n\nString.Contains (str: string, searchFor: string, ignoreCase: bool = false): bool"
+      "Description": "Determines if the given string contains the given substring.\n\nString.Contains (string: string, searchFor: string, ignoreCase: bool = false): bool"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -469,7 +469,7 @@
         {
           "Id": "d5307155a1e54104a20acece85fef344",
           "Name": "x",
-          "Description": "x value.\n\nvar[]..[]",
+          "Description": "Basic type object to compare (e.g. bool, int, double, string, etc.)\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -478,7 +478,7 @@
         {
           "Id": "51e4d92faca04b64842366b4289e15a7",
           "Name": "y",
-          "Description": "y value.\n\nvar[]..[]",
+          "Description": "Basic type object to compare (e.g. bool, int, double, string, etc.)\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -488,8 +488,8 @@
       "Outputs": [
         {
           "Id": "a80cd82e64b34e04bf1c7c4bc5c13686",
-          "Name": "var[]..[]",
-          "Description": "var[]..[]",
+          "Name": "bool",
+          "Description": "Result of equality check",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -497,7 +497,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Equal x to y?\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+      "Description": "Compares if x and y are equal\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -818,7 +818,7 @@
         {
           "Id": "a80d015189e242a39ffda07b0dae43a9",
           "Name": "bestFitPoints",
-          "Description": "Point[]",
+          "Description": "List of points to best fit line\n\nPoint[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -829,7 +829,7 @@
         {
           "Id": "bcc8c554f73a45be94f425429f3d905d",
           "Name": "Line",
-          "Description": "Line",
+          "Description": "Line from fit through points",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -964,7 +964,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Applies a function to arguments."
+      "Description": "Returns the result of a function with supplied arguments. Ex: arguments of a point and vector are applied to a translate function returning a translated point."
     },
     {
       "ConcreteType": "CoreNodeModels.HigherOrder.ApplyFunction, CoreNodeModels",
@@ -1003,7 +1003,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Applies a function to arguments."
+      "Description": "Returns the result of a function with supplied arguments. Ex: arguments of a point and vector are applied to a translate function returning a translated point."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
@@ -1302,7 +1302,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Applies a function to arguments."
+      "Description": "Returns the result of a function with supplied arguments. Ex: arguments of a point and vector are applied to a translate function returning a translated point."
     }
   ],
   "Connectors": [
@@ -1556,13 +1556,36 @@
       ]
     }
   ],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.3.2.15696",
+      "Version": "2.12.1.8246",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
