@@ -1,0 +1,295 @@
+{
+  "Uuid": "204f9e73-487a-4140-add3-09c15414c636",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "hideRevisionClouds",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "c1212401861f4e21acd7f857ae9f930a",
+      "Inputs": [
+        {
+          "Id": "779b3100bbb848e0853619b07cae5530",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6187b0a1badb4e71b5f4baeb9c324022",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "32e4ed3879d84bdf8d64aa3ea5ee05ee",
+      "Inputs": [
+        {
+          "Id": "623d92bb5e334021a9af347dddcddac1",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b98bb89ac134643a2acd8664afb7549",
+          "Name": "View",
+          "Description": "The View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "32c1cafdd4c34738b5d51de4bb685ad1",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category in the specified view from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "8c237496da2a461596aba976413b74b7",
+      "Inputs": [
+        {
+          "Id": "ff52fafd98a949b8bc6d7a2a64f0d603",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5043703be51046a1a0449ffcd5384db6",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Revision Clouds\";",
+      "Id": "b2bc9dc2f89f4c01b6c865ff13062229",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ae700cb90aeb4af281360f65f031ec28",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Views.Views.HideElements@Revit.Elements.Views.View,Revit.Elements.Element[]",
+      "Id": "c4d150759b7e42de9b361f30b2a9b589",
+      "Inputs": [
+        {
+          "Id": "00f2961445b848aba47254eca80207a1",
+          "Name": "view",
+          "Description": "View",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1b460f00b8624dffb55d707ca1d3ddf6",
+          "Name": "elements",
+          "Description": "Element[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "04f2900af5b5468cb5ce1b9ebf8c175c",
+          "Name": "bool[]",
+          "Description": "bool[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Longest",
+      "Description": "Views.HideElements (view: View, elements: Element[]): bool[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6187b0a1badb4e71b5f4baeb9c324022",
+      "End": "4b98bb89ac134643a2acd8664afb7549",
+      "Id": "9558c1c9317846a08b17bcee22d40fb1"
+    },
+    {
+      "Start": "6187b0a1badb4e71b5f4baeb9c324022",
+      "End": "00f2961445b848aba47254eca80207a1",
+      "Id": "6f9989c7152649b08de06d3001d3afeb"
+    },
+    {
+      "Start": "32c1cafdd4c34738b5d51de4bb685ad1",
+      "End": "1b460f00b8624dffb55d707ca1d3ddf6",
+      "Id": "33a9671234c24485b752ff390751a16e"
+    },
+    {
+      "Start": "5043703be51046a1a0449ffcd5384db6",
+      "End": "623d92bb5e334021a9af347dddcddac1",
+      "Id": "99282b68dfbe416f836c32239fb97f15"
+    },
+    {
+      "Start": "ae700cb90aeb4af281360f65f031ec28",
+      "End": "ff52fafd98a949b8bc6d7a2a64f0d603",
+      "Id": "90c55493bbbb4e489c2a9f0c95e723f3"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "200.4.0.7938",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "c1212401861f4e21acd7f857ae9f930a"
+      ]
+    },
+    {
+      "Name": "archi-lab.net",
+      "Version": "2022.210.2419",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "c4d150759b7e42de9b361f30b2a9b589"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.2.15696",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "c1212401861f4e21acd7f857ae9f930a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 474.0,
+        "Y": 464.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category in View",
+        "Id": "32e4ed3879d84bdf8d64aa3ea5ee05ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 729.0,
+        "Y": 535.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "8c237496da2a461596aba976413b74b7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 729.0,
+        "Y": 641.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b2bc9dc2f89f4c01b6c865ff13062229",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 729.0,
+        "Y": 722.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Views.HideElements",
+        "Id": "c4d150759b7e42de9b361f30b2a9b589",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 984.0,
+        "Y": 465.5
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}
