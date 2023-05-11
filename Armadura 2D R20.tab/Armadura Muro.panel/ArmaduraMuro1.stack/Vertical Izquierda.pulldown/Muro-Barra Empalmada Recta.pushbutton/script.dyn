@@ -3820,26 +3820,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
-      "Id": "25ef89b4ae264a098819b297cfb25195",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "3c953f86736f4f669f004eb9968a2f77",
-          "Name": "ActiveView",
-          "Description": "Return ActiveView",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.EndPoint",
       "Id": "8110d3210d5e47819cd6547457843837",
       "Inputs": [
@@ -4661,6 +4641,36 @@
       ],
       "Replication": "Auto",
       "Description": "Ends the current Dynamo transaction, returning whatever was passed in.\n\nTransaction.End (input: var): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "0bb0655bd27f4e3b96fe61adc6efa353",
+      "Inputs": [
+        {
+          "Id": "cdb3049a174745f886fc22a06636a5ce",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "086162a807634153a5b11c4333ea6797",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
     }
   ],
   "Connectors": [
@@ -5345,11 +5355,6 @@
       "Id": "2af65bdd27df4efa91b0a3e6820f0f6a"
     },
     {
-      "Start": "3c953f86736f4f669f004eb9968a2f77",
-      "End": "88a284149afd40159a069cc10c5dca11",
-      "Id": "6a13504fae3f43e89b2a2b0ac9e369dd"
-    },
-    {
       "Start": "ec36e6525c894ad29bc488bbabe5ad5c",
       "End": "9085b482e31643bcbe7aac09e4c1911c",
       "Id": "701f292582d04439bb6062f1da53c3cb"
@@ -5488,6 +5493,11 @@
       "Start": "89409b15239c4062a912ad239ba209f6",
       "End": "2b43e39d542a4abcb472d0fb56974af5",
       "Id": "66bb260d6bbf4eb78c0f6586dd7d51b0"
+    },
+    {
+      "Start": "086162a807634153a5b11c4333ea6797",
+      "End": "88a284149afd40159a069cc10c5dca11",
+      "Id": "c4c1e8cb4e2d4a0a87e96e444464769a"
     }
   ],
   "Dependencies": [
@@ -5510,8 +5520,7 @@
       "Version": "2.1.3",
       "ReferenceType": "Package",
       "Nodes": [
-        "bbad14bf337c4a608a17b0a3c1f94f00",
-        "25ef89b4ae264a098819b297cfb25195"
+        "bbad14bf337c4a608a17b0a3c1f94f00"
       ]
     },
     {
@@ -5602,7 +5611,8 @@
       "ReferenceType": "Package",
       "Nodes": [
         "c5e877b8841a4eafa09243f844571fc6",
-        "574bc6a4629e4bfb8df99e68911447ef"
+        "574bc6a4629e4bfb8df99e68911447ef",
+        "0bb0655bd27f4e3b96fe61adc6efa353"
       ]
     }
   ],
@@ -6731,16 +6741,6 @@
       },
       {
         "ShowGeometry": false,
-        "Name": "ViewUtility.ActiveView",
-        "Id": "25ef89b4ae264a098819b297cfb25195",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1723.0176129207973,
-        "Y": 1787.1093014156493
-      },
-      {
-        "ShowGeometry": false,
         "Name": "Curve.EndPoint",
         "Id": "8110d3210d5e47819cd6547457843837",
         "IsSetAsInput": false,
@@ -6998,6 +6998,16 @@
         "Excluded": false,
         "X": 4657.2177404072772,
         "Y": 1408.8282006019265
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "0bb0655bd27f4e3b96fe61adc6efa353",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1632.3099806541686,
+        "Y": 1947.0568271425454
       }
     ],
     "Annotations": [
@@ -7108,8 +7118,8 @@
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": 1100.5742555248933,
-    "Y": 405.15394609202974,
-    "Zoom": 0.19949277789663103
+    "X": -999.15392286973724,
+    "Y": -1574.9553659152427,
+    "Zoom": 1.1463226623902949
   }
 }

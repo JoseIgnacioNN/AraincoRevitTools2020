@@ -15,26 +15,6 @@
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
-      "Id": "bbad14bf337c4a608a17b0a3c1f94f00",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "c134af3291204b13b1c3b2259296fe65",
-          "Name": "ActiveView",
-          "Description": "Return ActiveView",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
       "FunctionSignature": "6dbe76ab-213d-43d4-aa87-20967daf4dac",
       "FunctionType": "Graph",
@@ -3859,26 +3839,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
-      "Id": "bf2ab44a5ee34c3db55605f9be9995df",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "90df19b77c1c484eb0c52297e7d891e9",
-          "Name": "ActiveView",
-          "Description": "Return ActiveView",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "Revit.Transaction.Transaction.End@var",
       "Id": "ebe73b4360bf41508e37a11d217fb98a",
       "Inputs": [
@@ -4722,14 +4682,69 @@
       ],
       "Replication": "Auto",
       "Description": "Ends the current Dynamo transaction, returning whatever was passed in.\n\nTransaction.End (input: var): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "674034e5c1564eb49c62e538bcf09b3f",
+      "Inputs": [
+        {
+          "Id": "b5fc9e3bdb3c4317a61fcc0bbeb3fda4",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "078d15e3dd4a41c2a83cb00d0ce482dc",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "b01a84f5928b42279f5d1ab9cb15eee2",
+      "Inputs": [
+        {
+          "Id": "b27e06e685584f738d16b413a9b50f2b",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef771eab18494eaab45f06cceea5d56c",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
     }
   ],
   "Connectors": [
-    {
-      "Start": "c134af3291204b13b1c3b2259296fe65",
-      "End": "9c43367872d640ae8d74275577a82756",
-      "Id": "731a2d7f11bc417e90ea42253c7b7689"
-    },
     {
       "Start": "b6ea03f0637a4f01932fb9374f0ea0ec",
       "End": "6f130b14c29144dea46c3e55b99c9714",
@@ -5436,11 +5451,6 @@
       "Id": "1c142551bb264bc4a37c6b765d5cacb1"
     },
     {
-      "Start": "90df19b77c1c484eb0c52297e7d891e9",
-      "End": "6b2fc5fe79ee405c92ee5a78ab2fc1a4",
-      "Id": "d6abe3b162a543b186cd3d15c3f612c2"
-    },
-    {
       "Start": "35d079ffe09e41c7affd8f3f4b7460da",
       "End": "30f1b7e6e8814c92872d703123c510ed",
       "Id": "987f9763ac584b37be2e94b362558952"
@@ -5564,6 +5574,16 @@
       "Start": "bb3045d324094f5eb5eed8608339b252",
       "End": "6b1639155358420a88c359afe598230f",
       "Id": "dd5ad719c5e04e87b6dba5a345d1a25c"
+    },
+    {
+      "Start": "078d15e3dd4a41c2a83cb00d0ce482dc",
+      "End": "6b2fc5fe79ee405c92ee5a78ab2fc1a4",
+      "Id": "3a1fc95564d44a2bb9d034093a92e256"
+    },
+    {
+      "Start": "ef771eab18494eaab45f06cceea5d56c",
+      "End": "9c43367872d640ae8d74275577a82756",
+      "Id": "59091a010da64c9bb561a5cb447f5892"
     }
   ],
   "Dependencies": [
@@ -5581,15 +5601,6 @@
     "d0e002bc-b698-422e-9027-0908d87ed18c"
   ],
   "NodeLibraryDependencies": [
-    {
-      "Name": "Quasar",
-      "Version": "2.1.3",
-      "ReferenceType": "Package",
-      "Nodes": [
-        "bbad14bf337c4a608a17b0a3c1f94f00",
-        "bf2ab44a5ee34c3db55605f9be9995df"
-      ]
-    },
     {
       "Name": "Clockwork for Dynamo 2.x",
       "Version": "2.3.0",
@@ -5680,7 +5691,9 @@
       "ReferenceType": "Package",
       "Nodes": [
         "a23cfa9953504868a38ce63164393690",
-        "1fc279f239204b83a852e5966b998e91"
+        "1fc279f239204b83a852e5966b998e91",
+        "674034e5c1564eb49c62e538bcf09b3f",
+        "b01a84f5928b42279f5d1ab9cb15eee2"
       ]
     }
   ],
@@ -5707,16 +5720,6 @@
       "UpZ": 0.0
     },
     "NodeViews": [
-      {
-        "ShowGeometry": false,
-        "Name": "ViewUtility.ActiveView",
-        "Id": "bbad14bf337c4a608a17b0a3c1f94f00",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2904.6353124132561,
-        "Y": -615.27483730055849
-      },
       {
         "ShowGeometry": false,
         "Name": "FamilyInstance.ByPointInView",
@@ -6829,16 +6832,6 @@
       },
       {
         "ShowGeometry": false,
-        "Name": "ViewUtility.ActiveView",
-        "Id": "bf2ab44a5ee34c3db55605f9be9995df",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2879.71196009715,
-        "Y": 1472.05591917353
-      },
-      {
-        "ShowGeometry": false,
         "Name": "Transaction.End",
         "Id": "ebe73b4360bf41508e37a11d217fb98a",
         "IsSetAsInput": false,
@@ -7106,6 +7099,26 @@
         "Excluded": false,
         "X": 6246.7828460376368,
         "Y": 1044.68734741568
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "674034e5c1564eb49c62e538bcf09b3f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2826.0634282292604,
+        "Y": 1499.8306862652114
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "b01a84f5928b42279f5d1ab9cb15eee2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2962.4118132151098,
+        "Y": -465.43137768433564
       }
     ],
     "Annotations": [
@@ -7218,8 +7231,8 @@
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": 677.40587394223348,
-    "Y": 460.783868160707,
-    "Zoom": 0.20384115492784652
+    "X": -2613.6959856279409,
+    "Y": 1037.8007397251608,
+    "Zoom": 1.2006082239348936
   }
 }

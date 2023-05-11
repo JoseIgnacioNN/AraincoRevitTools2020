@@ -15,26 +15,6 @@
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
-      "Id": "bbad14bf337c4a608a17b0a3c1f94f00",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "c134af3291204b13b1c3b2259296fe65",
-          "Name": "ActiveView",
-          "Description": "Return ActiveView",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
       "FunctionSignature": "6dbe76ab-213d-43d4-aa87-20967daf4dac",
       "FunctionType": "Graph",
@@ -3898,26 +3878,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
-      "Id": "61406db5075942eaa813fd335143b7a4",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "5faaf7a4592a47dca46394a1649877d6",
-          "Name": "ActiveView",
-          "Description": "Return ActiveView",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.EndPoint",
       "Id": "f559093782e6475f802de4a0bddfc5cf",
       "Inputs": [
@@ -4722,14 +4682,69 @@
       ],
       "Replication": "Auto",
       "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "d350181cc0ce450382e6fc300847e16f",
+      "Inputs": [
+        {
+          "Id": "c9d2adc0bd70451490bbd903e0b76df0",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e5e2b4096397487bb559092d124e692e",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "7d60fbed836e430f9c4fe5c1257eb2c3",
+      "Inputs": [
+        {
+          "Id": "b8f93447f7fe43eb897ccd1ac384d5cb",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e5feb5489a4947af9db931d5d191ef4e",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
     }
   ],
   "Connectors": [
-    {
-      "Start": "c134af3291204b13b1c3b2259296fe65",
-      "End": "9c43367872d640ae8d74275577a82756",
-      "Id": "731a2d7f11bc417e90ea42253c7b7689"
-    },
     {
       "Start": "b6ea03f0637a4f01932fb9374f0ea0ec",
       "End": "6f130b14c29144dea46c3e55b99c9714",
@@ -5426,11 +5441,6 @@
       "Id": "e64403aa2d1148f59d34576d284023e3"
     },
     {
-      "Start": "5faaf7a4592a47dca46394a1649877d6",
-      "End": "3876fcdf0b8d4b1282109ef190dde447",
-      "Id": "d87def73b73c488181e5491cc7ba7cd2"
-    },
-    {
       "Start": "5d9a1ce3fb1a492a9954a7c508c7f932",
       "End": "6df1e5f5e0394ce3bd0d4138fbd33a1e",
       "Id": "5b5567b6025549c3be5215f302d6c4fb"
@@ -5564,6 +5574,16 @@
       "Start": "c92954eb00ba4e6fa6b41bd7091a670d",
       "End": "3a789a7aadd044d2b2d22f430b3e8527",
       "Id": "e3c93d751b164437b21b1130b44b34d0"
+    },
+    {
+      "Start": "e5e2b4096397487bb559092d124e692e",
+      "End": "3876fcdf0b8d4b1282109ef190dde447",
+      "Id": "a2a43f95f4fe4756980d21e25ef0ab97"
+    },
+    {
+      "Start": "e5feb5489a4947af9db931d5d191ef4e",
+      "End": "9c43367872d640ae8d74275577a82756",
+      "Id": "b6533d4fb926435cb7394f8a7420a28d"
     }
   ],
   "Dependencies": [
@@ -5581,15 +5601,6 @@
     "d0e002bc-b698-422e-9027-0908d87ed18c"
   ],
   "NodeLibraryDependencies": [
-    {
-      "Name": "Quasar",
-      "Version": "2.1.3",
-      "ReferenceType": "Package",
-      "Nodes": [
-        "bbad14bf337c4a608a17b0a3c1f94f00",
-        "61406db5075942eaa813fd335143b7a4"
-      ]
-    },
     {
       "Name": "Clockwork for Dynamo 2.x",
       "Version": "2.3.0",
@@ -5680,7 +5691,9 @@
       "ReferenceType": "Package",
       "Nodes": [
         "6222f8197d8d44fcbe4db0f8c166d252",
-        "86670165fbf4452b98b9ba0615f75bcf"
+        "86670165fbf4452b98b9ba0615f75bcf",
+        "d350181cc0ce450382e6fc300847e16f",
+        "7d60fbed836e430f9c4fe5c1257eb2c3"
       ]
     }
   ],
@@ -5707,16 +5720,6 @@
       "UpZ": 0.0
     },
     "NodeViews": [
-      {
-        "ShowGeometry": false,
-        "Name": "ViewUtility.ActiveView",
-        "Id": "bbad14bf337c4a608a17b0a3c1f94f00",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2957.6485586600525,
-        "Y": -2044.7271037933642
-      },
       {
         "ShowGeometry": false,
         "Name": "FamilyInstance.ByPointInView",
@@ -6829,16 +6832,6 @@
       },
       {
         "ShowGeometry": false,
-        "Name": "ViewUtility.ActiveView",
-        "Id": "61406db5075942eaa813fd335143b7a4",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2943.2438440238184,
-        "Y": 209.61073677749914
-      },
-      {
-        "ShowGeometry": false,
         "Name": "Curve.EndPoint",
         "Id": "f559093782e6475f802de4a0bddfc5cf",
         "IsSetAsInput": false,
@@ -7106,6 +7099,26 @@
         "Excluded": false,
         "X": 5795.5546503261285,
         "Y": 614.03066466131543
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "d350181cc0ce450382e6fc300847e16f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2956.1318004355626,
+        "Y": 250.43192003880381
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "7d60fbed836e430f9c4fe5c1257eb2c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2942.8050100415417,
+        "Y": -2035.9423944571706
       }
     ],
     "Annotations": [
@@ -7218,8 +7231,8 @@
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": -4984.9558514859064,
-    "Y": 256.64424919793458,
-    "Zoom": 0.85309918800478679
+    "X": -1300.7643416149713,
+    "Y": 1790.0227242072003,
+    "Zoom": 0.70918395448274563
   }
 }
