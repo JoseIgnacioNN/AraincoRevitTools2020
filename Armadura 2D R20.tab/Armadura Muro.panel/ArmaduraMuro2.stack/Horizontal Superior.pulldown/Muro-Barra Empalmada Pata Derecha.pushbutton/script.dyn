@@ -2,33 +2,13 @@
   "Uuid": "b5cfb46d-68a7-40ff-a5a7-666564b3b0e7",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "Muro - Barra Empalmada Pata Derecha",
+  "Name": "script",
   "ElementResolver": {
     "ResolutionMap": {}
   },
   "Inputs": [],
   "Outputs": [],
   "Nodes": [
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
-      "Id": "bbad14bf337c4a608a17b0a3c1f94f00",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "c134af3291204b13b1c3b2259296fe65",
-          "Name": "ActiveView",
-          "Description": "Return ActiveView",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
-    },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
       "FunctionSignature": "6dbe76ab-213d-43d4-aa87-20967daf4dac",
@@ -2350,14 +2330,39 @@
       ],
       "Replication": "Auto",
       "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Orchid.RevitProject.Common.Document",
+      "Id": "ab0c24d2d2184b89900390839a8f0d44",
+      "Inputs": [
+        {
+          "Id": "71756dfd7cba4c3cb4c95cfad11efb20",
+          "Name": "document",
+          "Description": "Document (rvt) as Orchid document.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3c773f03f7b74a349220247078faf875",
+          "Name": "View",
+          "Description": "The active view as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in document.\n\nDocument.ActiveView (document: Document = null): Element"
     }
   ],
   "Connectors": [
-    {
-      "Start": "c134af3291204b13b1c3b2259296fe65",
-      "End": "9c43367872d640ae8d74275577a82756",
-      "Id": "731a2d7f11bc417e90ea42253c7b7689"
-    },
     {
       "Start": "b6ea03f0637a4f01932fb9374f0ea0ec",
       "End": "bcf61de3b2bd4a5880d9721b3420b931",
@@ -2752,6 +2757,11 @@
       "Start": "6443347a9870431e81cf3ee5331fbed1",
       "End": "c886d28d19e54a3dabc0b6d2bb762873",
       "Id": "f8bc953ffeea42ad9371e2758fee948f"
+    },
+    {
+      "Start": "3c773f03f7b74a349220247078faf875",
+      "End": "9c43367872d640ae8d74275577a82756",
+      "Id": "cb8bdd4545fc45edb385aed54807955a"
     }
   ],
   "Dependencies": [
@@ -2769,14 +2779,6 @@
     "d0e002bc-b698-422e-9027-0908d87ed18c"
   ],
   "NodeLibraryDependencies": [
-    {
-      "Name": "Quasar",
-      "Version": "2.1.3",
-      "ReferenceType": "Package",
-      "Nodes": [
-        "bbad14bf337c4a608a17b0a3c1f94f00"
-      ]
-    },
     {
       "Name": "Clockwork for Dynamo 2.x",
       "Version": "2.3.0",
@@ -2851,7 +2853,8 @@
       "Version": "200.4.0.7938",
       "ReferenceType": "Package",
       "Nodes": [
-        "26ee6ae118134fdf9ed62c206b3c8799"
+        "26ee6ae118134fdf9ed62c206b3c8799",
+        "ab0c24d2d2184b89900390839a8f0d44"
       ]
     }
   ],
@@ -2878,16 +2881,6 @@
       "UpZ": 0.0
     },
     "NodeViews": [
-      {
-        "ShowGeometry": false,
-        "Name": "ViewUtility.ActiveView",
-        "Id": "bbad14bf337c4a608a17b0a3c1f94f00",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1169.5981343450344,
-        "Y": -91.286225901168336
-      },
       {
         "ShowGeometry": false,
         "Name": "FamilyInstance.ByPointInView",
@@ -3557,6 +3550,16 @@
         "Excluded": false,
         "X": 3540.686770677059,
         "Y": 723.95394126171493
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Document.ActiveView",
+        "Id": "ab0c24d2d2184b89900390839a8f0d44",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1184.372610205962,
+        "Y": 67.900923053013571
       }
     ],
     "Annotations": [
@@ -3609,13 +3612,13 @@
         "Height": 627.01235359554687,
         "FontSize": 24.0,
         "InitialTop": 723.95394126171493,
-        "InitialHeight": 640.00759710454986,
+        "InitialHeight": 640.01235359554687,
         "TextblockHeight": 29.0,
         "Background": "#FF00FF00"
       }
     ],
-    "X": 887.16783023274093,
-    "Y": 563.04736246448078,
-    "Zoom": 0.27074298963167076
+    "X": -723.87840467859564,
+    "Y": 470.60959066037839,
+    "Zoom": 1.2723009563827636
   }
 }
