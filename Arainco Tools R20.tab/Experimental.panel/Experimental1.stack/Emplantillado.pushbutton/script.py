@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Obtener los servicios de Revit
 from pyrevit import revit, DB
 from pyrevit import script
