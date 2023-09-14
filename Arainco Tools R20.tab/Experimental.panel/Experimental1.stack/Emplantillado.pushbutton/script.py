@@ -51,6 +51,9 @@ class CategorySelectionFilter(ISelectionFilter):
     def AllowReference(self, reference, point):
         return True
 
+# Define un filtro para seleccionar elementos de la categoría "Structural Foundations"
+filter = CategorySelectionFilter()
+
 try:
     # Utiliza el método PickObjects para permitir al usuario seleccionar elementos.
     picked_elements = uidoc.Selection.PickObjects(ObjectType.Element, filter, "Selecciona elementos de la categoría 'Structural Foundations'")
@@ -69,10 +72,6 @@ try:
     else:
         # No se seleccionaron elementos.
         TaskDialog.Show("Sin selección", "No se seleccionaron elementos de la categoría 'Structural Foundations'.")
-except Exception as e:
-    if isinstance(e, System.OperationCanceledException):
-        # El usuario presionó el botón "Escape" para cancelar la selección.
-        TaskDialog.Show("Selección cancelada", "El usuario canceló la selección de elementos.")
-    else:
-        # Maneja otras excepciones aquí, si es necesario.
-        TaskDialog.Show("Error", "Ocurrió un error: {}".format(e))
+except OperationCanceledException:
+    # El usuario presionó el botón "Escape" para cancelar la selección.
+    TaskDialog.Show("Selección cancelada", "El usuario canceló la selección de elementos.")
