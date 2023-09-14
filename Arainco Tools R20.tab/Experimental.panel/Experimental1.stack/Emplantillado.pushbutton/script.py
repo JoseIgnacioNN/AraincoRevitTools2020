@@ -1,26 +1,67 @@
-# Importa las bibliotecas necesarias
-from pyrevit import revit, DB
-from pyrevit import forms
+# BIBLIOTECAS
+# ............................................................................
+import clr
+import sys
+import os
+import re
+import stat
+import unicodedata
+import traceback
+import System
 
-# Función para seleccionar elementos de la categoría "Structural Foundation"
-def select_structural_foundations():
-    # Inicializa una lista vacía para almacenar los elementos seleccionados
-    selected_elements = []
 
-    # Crea un filtro para la categoría "Structural Foundation"
-    category_filter = DB.ElementCategoryFilter(DB.BuiltInCategory.OST_StructuralFoundation)
+# Para trabajar con la RevitAPI
+clr.AddReference('RevitAPI')
+import Autodesk
+from Autodesk.Revit.DB import *
+from Autodesk.Revit.ApplicationServices import *
+from Autodesk.Revit.DB.Structure import *
 
-    # Abre una transacción para la selección
-    with revit.Transaction("Select Structural Foundations"):
-        # Utiliza un recolector de elementos para obtener elementos que cumplan con el filtro
-        collector = DB.FilteredElementCollector(revit.doc)
-        foundations = collector.WherePasses(category_filter).ToElements()
+# Para trabajar con la RevitAPIUI
+clr.AddReference('RevitAPIUI')
+import Autodesk
+from Autodesk.Revit.UI import *
+from Autodesk.Revit.UI.Selection import *
 
-        # Agrega los elementos a la lista de elementos seleccionados
-        selected_elements.extend(foundations)
 
-        # Selecciona los elementos en el modelo de Revit
-        revit.uidoc.Selection.SetElementIds([element.Id for element in selected_elements])
+# Para trabajar con ICollection
+from System.Collections.Generic import *
 
-# Llama a la función para seleccionar elementos de la categoría "Structural Foundation"
-select_structural_foundations()
+# Para trabajar contra el documento y hacer transacciones
+clr.AddReference('RevitServices')
+from RevitServices.Persistence import DocumentManager
+from RevitServices.Transactions import TransactionManager
+
+doc = DocumentManager.Instance.CurrentDBDocument
+uiapp = DocumentManager.Instance.CurrentUIApplication
+app = uiapp.Application
+uidoc = uiapp.ActiveUIDocument
+
+class CategorySelectionFilter(ISelectionFilter):
+    def AllowElement(self, element):
+        # Asegúrate de que la categoría esté escrita correctamente y coincida con la de tu modelo
+        return element.Category.Name == "Structural Foundations"  # Cambiado a "Structural Foundations" si es el nombre correcto
+
+    def AllowReference(self, reference, point):
+        return True
+
+# Define un filtro para seleccionar elementos de la categoría "Structural Foundations"
+filter = CategorySelectionFilter()
+
+# Utiliza el método PickObjects para permitir al usuario seleccionar elementos.
+picked_elements = uidoc.Selection.PickObjects(ObjectType.Element, filter, "Selecciona elementos de la categoría 'Structural Foundations'")
+
+if picked_elements:
+    # Recopila los ElementId de los elementos seleccionados
+    selected_element_ids = [reference.ElementId for reference in picked_elements]
+
+    # Convierte la lista de ElementId en una colección List[ElementId]
+    selected_element_ids_collection = List[ElementId](selected_element_ids)
+
+    # Establece los elementos seleccionados en el documento actual
+    uidoc.Selection.SetElementIds(selected_element_ids_collection)
+
+    # Ahora los elementos permanecerán seleccionados y puedes manipularlos posteriormente
+else:
+    # El usuario canceló la selección o no se seleccionaron elementos.
+    TaskDialog.Show("Sin selección", "No se seleccionaron elementos de la categoría 'Structural Foundations'.")
